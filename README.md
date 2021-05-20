@@ -1,2 +1,2 @@
-# soapbox
+# Soapbox
 Clone of Medium
