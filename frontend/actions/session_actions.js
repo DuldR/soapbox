@@ -25,13 +25,17 @@ export const receiveErrors = (errors) => ({
 export const login = (user) => (dispatch) => {
     return APIUtil.createSession(user).then(user => {
         dispatch(receiveCurrentUser(user))
-        return user
     })
 }
 
 export const signup = (user) => (dispatch) => {
     return userAPIUtil.createUser(user).then(user => {
         dispatch(receiveCurrentUser(user))
-        return user
     })
 }
+
+export const logout = () => (dispatch) => (
+    APIUtil.destroySession().then(() => {
+        dispatch(logoutCurrentUser())
+    })
+)

@@ -8,6 +8,8 @@ class SessionForm extends React.Component {
         this.state = { username: "", email: "", password: "" }
 
         this.displayHeader = this.displayHeader.bind(this)
+        this.handleSubmit = this.handleSubmit.bind(this);
+        this.addData = this.addData.bind(this)
     }
 
     displayHeader() {
@@ -22,24 +24,53 @@ class SessionForm extends React.Component {
         }
     }
 
+    addData(e) {
+
+        switch(e.currentTarget.classList[0]) {
+            case ("form-username"):
+                this.setState( { username: e.currentTarget.value } )
+                break
+            case ("form-password"):
+                this.setState( { password: e.currentTarget.value })
+                break
+            default:
+                break
+        }
+
+    }
+
+    handleSubmit(e) {
+        e.preventDefault();
+
+        const user = Object.assign({}, this.state);
+
+        if (this.props.formType === "signup") { 
+            this.props.signup({ user: user })
+        } else {
+            this.props.login({ user: user } )
+        }
+            
+    }
+
 
     render() {
         return ( 
-            <div>
+
+            <section>
                 {this.displayHeader()}
                 <br></br>
-                <form className="user-form">
 
-                
+                <form onSubmit={this.handleSubmit} className="user-form">
+                    
+
                     <label>Username:</label>
-                    <input className="form-username" type='text'></input>
+                    <input className="form-username" onChange={this.addData} type='text'></input>
                     <label>Password</label>
-                    <input className="form-password" type='text'></input>
+                    <input className="form-password" onChange={this.addData} type='text'></input>
                     <button>Submit</button>
                 </form>
-
-            </div>
-        
+            </section>
+                
         )
     }
 }
