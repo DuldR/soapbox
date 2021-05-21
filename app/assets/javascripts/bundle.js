@@ -199,9 +199,10 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */   "RECEIVE_ERRORS": function() { return /* binding */ RECEIVE_ERRORS; },
 /* harmony export */   "receiveCurrentUser": function() { return /* binding */ receiveCurrentUser; },
 /* harmony export */   "logoutCurrentUser": function() { return /* binding */ logoutCurrentUser; },
-/* harmony export */   "receiveErrors": function() { return /* binding */ receiveErrors; }
+/* harmony export */   "receiveErrors": function() { return /* binding */ receiveErrors; },
+/* harmony export */   "signup": function() { return /* binding */ signup; }
 /* harmony export */ });
-/* harmony import */ var _util_session_util__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../util/session_util */ "./frontend/util/session_util.jsx");
+/* harmony import */ var _util_session_util__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../util/session_util */ "./frontend/util/session_util.js");
 
 var RECEIVE_CURRENT_USER = "RECEIVE_CURRENT_USER";
 var LOGOUT_CURRENT_USER = "LOGOUT_CURRENT_USER";
@@ -221,6 +222,14 @@ var receiveErrors = function receiveErrors(errors) {
   return {
     type: RECEIVE_ERRORS,
     errors: errors
+  };
+};
+var signup = function signup(user) {
+  return function (dispatch) {
+    return _util_session_util__WEBPACK_IMPORTED_MODULE_0__.createSession(user).then(function (user) {
+      dispatch(receiveCurrentUser(user));
+      return user;
+    });
   };
 };
 
@@ -396,10 +405,10 @@ var configureStore = function configureStore() {
 
 /***/ }),
 
-/***/ "./frontend/util/session_util.jsx":
-/*!****************************************!*\
-  !*** ./frontend/util/session_util.jsx ***!
-  \****************************************/
+/***/ "./frontend/util/session_util.js":
+/*!***************************************!*\
+  !*** ./frontend/util/session_util.js ***!
+  \***************************************/
 /***/ (function(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -36819,8 +36828,15 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react_dom__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react-dom */ "./node_modules/react-dom/index.js");
 /* harmony import */ var _components_root__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./components/root */ "./frontend/components/root.jsx");
 /* harmony import */ var _store_store__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./store/store */ "./frontend/store/store.js");
+/* harmony import */ var _frontend_util_session_util__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../frontend/util/session_util */ "./frontend/util/session_util.js");
+/* harmony import */ var _frontend_actions_session_actions__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../frontend/actions/session_actions */ "./frontend/actions/session_actions.js");
 
 
+
+ // Testing imports
+// Ajax
+
+ // Actions
 
 
 document.addEventListener("DOMContentLoaded", function () {
@@ -36831,6 +36847,8 @@ document.addEventListener("DOMContentLoaded", function () {
   }), root);
   window.store = store;
 });
+window.api = _frontend_util_session_util__WEBPACK_IMPORTED_MODULE_4__;
+window.session = _frontend_actions_session_actions__WEBPACK_IMPORTED_MODULE_5__;
 }();
 /******/ })()
 ;

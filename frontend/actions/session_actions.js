@@ -12,7 +12,6 @@ export const receiveCurrentUser = (payload) => {
     }
 }
 
-
 export const logoutCurrentUser = () => ({
     type: LOGOUT_CURRENT_USER
 })
@@ -21,3 +20,10 @@ export const receiveErrors = (errors) => ({
     type: RECEIVE_ERRORS,
     errors
 })
+
+export const signup = (user) => (dispatch) => {
+    return APIUtil.createSession(user).then(user => {
+        dispatch(receiveCurrentUser(user))
+        return user
+    })
+}
