@@ -6,7 +6,8 @@ import configureStore from './store/store'
 // Testing imports
 
 // Ajax
-import * as api from '../frontend/util/session_util'
+import * as sapi from '../frontend/util/session_util'
+import * as uapi from '../frontend/util/user_util'
 
 // Actions
 
@@ -21,6 +22,6 @@ document.addEventListener("DOMContentLoaded", () => {
     window.store = store;
 })
 
-window.api = api
+window.uapi = uapi
 window.session = sessions
 

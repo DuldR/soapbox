@@ -1,4 +1,5 @@
 import * as APIUtil from '../util/session_util'
+import * as userAPIUtil from '../util/user_util'
 
 
 export const RECEIVE_CURRENT_USER = "RECEIVE_CURRENT_USER"
@@ -21,8 +22,15 @@ export const receiveErrors = (errors) => ({
     errors
 })
 
-export const signup = (user) => (dispatch) => {
+export const login = (user) => (dispatch) => {
     return APIUtil.createSession(user).then(user => {
+        dispatch(receiveCurrentUser(user))
+        return user
+    })
+}
+
+export const signup = (user) => (dispatch) => {
+    return userAPIUtil.createUser(user).then(user => {
         dispatch(receiveCurrentUser(user))
         return user
     })
