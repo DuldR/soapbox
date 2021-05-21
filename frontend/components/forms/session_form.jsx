@@ -1,4 +1,5 @@
 import React from 'react'
+import { login } from '../../actions/session_actions';
 
 
 class SessionForm extends React.Component {
@@ -47,7 +48,8 @@ class SessionForm extends React.Component {
         if (this.props.formType === "signup") { 
             this.props.signup({ user: user })
         } else {
-            this.props.login({ user: user } )
+            delete user.email
+            this.props.login({ session: user } )
         }
             
     }
