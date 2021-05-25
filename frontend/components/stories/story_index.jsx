@@ -9,7 +9,9 @@ class StoryIndex extends React.Component {
 
     render() {
         return (
-            <h1>Testing</h1>
+            <div className={"story-index"}>
+
+            </div>
         )
     }
 }

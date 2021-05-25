@@ -9,4 +9,5 @@
 #  updated_at :datetime         not null
 #
 class Story < ApplicationRecord
+    # PRobably need some code here for ocmments
 end
