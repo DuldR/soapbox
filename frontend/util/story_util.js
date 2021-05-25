@@ -35,3 +35,11 @@ export const destroyStory = (storyId) => {
     })
 
 }
+
+export const updateStory = (story) => {
+    return $.ajax({
+        method: "PATCH",
+        url: `api/stories/${story.id}`,
+        data: story
+    })
+}

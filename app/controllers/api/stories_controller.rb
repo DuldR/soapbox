@@ -21,6 +21,15 @@ class Api::StoriesController < ApplicationController
 
     def update
 
+        @story = Story.find(story_params[:id])
+
+        if @story.update(story_params)
+            render json: @story
+        else
+            render json: @story.errors.full_messages, status: 422
+
+        end
+
     end
 
     def destroy
@@ -47,7 +56,7 @@ class Api::StoriesController < ApplicationController
     private
 
     def story_params
-        params.require(:story).permit(:body, :user_id)
+        params.require(:story).permit(:id, :body, :user_id)
 
     end
 
