@@ -25,10 +25,21 @@ class Api::StoriesController < ApplicationController
 
     def destroy
 
+        # Kill dependents
+        @story = Story.find(params[:id])
+
+        @story.destroy
+
+        render json: {}
+
     end
 
     def index
 
+        # Might need to limit this
+        @stories = Story.all
+    
+        render json: @stories
 
     end
 

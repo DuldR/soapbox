@@ -11,7 +11,26 @@ export const createStory = (story) => {
 export const getStory = (storyId) => {
 
     return $.ajax({
-        method: "get",
+        method: "GET",
+        url: `api/stories/${storyId}`
+    })
+
+}
+
+// Might need to set up a filter maybe?
+export const getStories = () => {
+
+    return $.ajax({
+        method: "GET",
+        url: `api/stories/`
+    })
+
+}
+
+export const destroyStory = (storyId) => {
+
+    return $.ajax({
+        method: "DELETE",
         url: `api/stories/${storyId}`
     })
 
