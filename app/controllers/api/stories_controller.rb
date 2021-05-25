@@ -13,6 +13,9 @@ class Api::StoriesController < ApplicationController
     end
 
     def show
+        @story = Story.find(params[:id])
+
+        render json: @story
 
     end
 

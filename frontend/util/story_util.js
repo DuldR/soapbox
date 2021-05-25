@@ -7,3 +7,12 @@ export const createStory = (story) => {
     })
 
 }
+
+export const getStory = (storyId) => {
+
+    return $.ajax({
+        method: "get",
+        url: `api/stories/${storyId}`
+    })
+
+}
