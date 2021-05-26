@@ -16,8 +16,21 @@ import * as sessions from '../frontend/actions/session_actions'
 import * as stories from '../frontend/actions/story_actions'
 
 document.addEventListener("DOMContentLoaded", () => {
-    const store = configureStore();
     const root = document.getElementById("root")
+
+    let store;
+    if (window.currentUser) {
+        const preloadedState = {
+        entities: {
+            user: { [window.currentUser.id]: window.currentUser }
+        },
+        session: { id: window.currentUser.id }
+        };
+        store = configureStore(preloadedState);
+        delete window.currentUser;
+    } else {
+        store = configureStore();
+    }
 
     ReactDOM.render( <Root store={store}/>, root)
 
