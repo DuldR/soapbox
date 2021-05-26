@@ -12,8 +12,8 @@ User.create!(username: "TestMan3", email:"test-email3@test.com", password: 12345
 User.create!(username: "TestMan4", email:"test-email4@test.com", password: 123456)
 
 
-Story.create!(body: "Hello, I'm a test story for you!", user_id: 1)
-Story.create!(body: "Test Story 2 ", user_id: 2)
-Story.create!(body: "test Story 3", user_id: 3)
-Story.create!(body: "Once again I am writing", user_id: 4)
-Story.create!(body: "Let's all go to the rapture", user_id: 1)
+Story.create!(title: "TestTitle1", body: "Hello, I'm a test story for you!", user_id: 1)
+Story.create!(title: "TestTitle2", body: "Test Story 2 ", user_id: 2)
+Story.create!(title: "TestTitle3", body: "test Story 3", user_id: 3)
+Story.create!(title: "TestTitle4", body: "Once again I am writing", user_id: 4)
+Story.create!(title: "TestTitle5", body: "Let's all go to the rapture", user_id: 1)

@@ -19,6 +19,10 @@ class StoryIndex extends React.Component {
         } else {
             const storyIndex = this.props.stories.map((story, idx) => {
                 return <li key={"story- " + idx}>
+                    <label>Title </label>
+                    {story.title}
+                    <br></br>
+                    <label>Body </label>
                     {story.body}
                 </li>
             })
