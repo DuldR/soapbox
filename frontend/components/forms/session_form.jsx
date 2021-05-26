@@ -34,6 +34,9 @@ class SessionForm extends React.Component {
             case ("form-password"):
                 this.setState( { password: e.currentTarget.value })
                 break
+            case ("form-email"):
+                this.setState( { email: e.currentTarget.value })
+                break
             default:
                 break
         }
@@ -67,6 +70,8 @@ class SessionForm extends React.Component {
 
                     <label>Username:</label>
                     <input className="form-username" onChange={this.addData} type='text'></input>
+                    <label>Email:</label>
+                    <input className="form-email" onChange={this.addData} type='text'></input>
                     <label>Password</label>
                     <input className="form-password" onChange={this.addData} type='text'></input>
                     <button>Submit</button>
