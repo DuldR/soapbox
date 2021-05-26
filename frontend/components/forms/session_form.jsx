@@ -11,6 +11,7 @@ class SessionForm extends React.Component {
         this.displayHeader = this.displayHeader.bind(this)
         this.handleSubmit = this.handleSubmit.bind(this);
         this.addData = this.addData.bind(this)
+        this.showSignup = this.showSignup.bind(this)
     }
 
     displayHeader() {
@@ -57,6 +58,17 @@ class SessionForm extends React.Component {
             
     }
 
+    showSignup(e) {
+
+        return (
+            <div>
+                <label>Email:</label>
+                <input className="form-email" onChange={this.addData} type='text'></input>
+            </div>
+            
+        )
+    }
+
 
     render() {
         return ( 
@@ -70,8 +82,7 @@ class SessionForm extends React.Component {
 
                     <label>Username:</label>
                     <input className="form-username" onChange={this.addData} type='text'></input>
-                    <label>Email:</label>
-                    <input className="form-email" onChange={this.addData} type='text'></input>
+                    {this.props.formType === "signup" ? this.showSignup() : null }    
                     <label>Password</label>
                     <input className="form-password" onChange={this.addData} type='text'></input>
                     <button>Submit</button>
