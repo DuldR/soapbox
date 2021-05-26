@@ -13,6 +13,7 @@ import * as sapi from '../frontend/util/story_util'
 // Actions
 
 import * as sessions from '../frontend/actions/session_actions'
+import * as stories from '../frontend/actions/story_actions'
 
 document.addEventListener("DOMContentLoaded", () => {
     const store = configureStore();
@@ -26,4 +27,5 @@ document.addEventListener("DOMContentLoaded", () => {
 window.uapi = uapi
 window.sapi = sapi
 window.session = sessions
+window.stories = stories
 
