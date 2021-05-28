@@ -4,11 +4,14 @@ import { Link } from 'react-router-dom'
 export const StoryIndexItem = (props) => {
 
     const { story } = props
-    
+
     return (
         <ul>
             <li>
-                {story.title}
+                <Link to={`/stories/${story.id}`}>
+                    {story.title}
+                </Link>
+    
             </li>
 
             <li>

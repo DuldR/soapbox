@@ -11,7 +11,7 @@ class UserDropdown extends React.Component {
         return (
             <ul>
                 <li>
-                    <Link to='/stories/new'>Write a story</Link>
+                    <Link to='/new'>Write a story</Link>
                 </li>
                 <li>
                     Stories
