@@ -1,4 +1,5 @@
 import React from 'react'
+import { StoryIndexItem } from './story_index_item'
 
 
 class StoryIndex extends React.Component {
@@ -18,13 +19,7 @@ class StoryIndex extends React.Component {
             return <h1> Loading </h1>
         } else {
             const storyIndex = this.props.stories.map((story, idx) => {
-                return <li key={"story- " + idx}>
-                    <label>Title </label>
-                    {story.title}
-                    <br></br>
-                    <label>Body </label>
-                    {story.body}
-                </li>
+                return <StoryIndexItem key={"story-idx-" + idx} story={story} />
             })
 
             return storyIndex
@@ -38,7 +33,6 @@ class StoryIndex extends React.Component {
 
         return (
             <div className={"story-index"}>
-
                 {this.listStories()}
             </div>
         )
