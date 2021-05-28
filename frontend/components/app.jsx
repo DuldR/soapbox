@@ -3,8 +3,8 @@ import { AuthRoute } from '../util/route_util'
 import GreetingContainer from './home/greeting_container'
 import SignupFormContainer from './forms/signup_form_container'
 import LoginFormContainer from './forms/login_form_container'
-
 import StoryIndexContainer from './stories/story_index_container'
+import UserDropdown from './home/placeholder_user_dropdown'
 
 import { Route } from 'react-router-dom'
 
@@ -12,6 +12,7 @@ const App = () => (
     <div>
         <section className="landing-info">
             <GreetingContainer />
+            <UserDropdown />
         </section>
 
         <section>

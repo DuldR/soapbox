@@ -3,11 +3,16 @@ import { Link } from 'react-router-dom'
 
 export const StoryIndexItem = (props) => {
 
-    console.log(props)
+    const { story } = props
+    
     return (
         <ul>
             <li>
-                {props.story.title}
+                {story.title}
+            </li>
+
+            <li>
+                {story.body}
             </li>
         </ul>
     )

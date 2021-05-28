@@ -24,3 +24,9 @@ export const fetchStories = () => (dispatch) => {
         dispatch(receiveStories(stories))
     })
 }
+
+export const fetchOneStory = (story) => (dispatch) => {
+    return APIUtil.getStory(story).then(story => {
+        dispatch(receiveOneStory(story))
+    })
+}
