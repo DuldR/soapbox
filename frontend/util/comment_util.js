@@ -6,3 +6,20 @@ export const getComment = (commentId) => {
     })
 
 }
+
+export const getAllComments = () => {
+    return $.ajax({
+        method: "GET",
+        url: 'api/comments/'
+    })
+}
+
+export const createComment = (comment) => {
+
+    return $.ajax({
+        method: "POST",
+        url: "api/comments",
+        data: comment
+    })
+
+}

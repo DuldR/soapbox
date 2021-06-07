@@ -2,7 +2,7 @@ class Api::CommentsController < ApplicationController
 
     def create
 
-        @commnet= Comment.new(comment_params)
+        @comment= Comment.new(comment_params)
 
         if @comment.save
             render json: @comment
@@ -16,6 +16,15 @@ class Api::CommentsController < ApplicationController
         @comment = Comment.find(params[:id])
 
         render json: @comment
+
+    end
+
+    def index
+
+        # Might need to limit this
+        @comments = Comment.all
+    
+        render json: @comments
 
     end
 
@@ -42,16 +51,6 @@ class Api::CommentsController < ApplicationController
     #     render json: {}
 
     # end
-
-    # def index
-
-    #     # Might need to limit this
-    #     @stories = Story.all
-    
-    #     render json: @stories
-
-    # end
-
 
     private
 
