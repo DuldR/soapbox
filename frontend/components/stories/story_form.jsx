@@ -6,26 +6,29 @@ class StoryForm extends React.Component {
     constructor(props) {
         super(props);
         this.state = { title: "", body: "", user_id: props.user.id }
+
+        this.handleSubmit = this.handleSubmit.bind(this)
     }
 
-    // handleSubmit(e) {
-    //     e.preventDefault();
-    //     let story = { story: this.state }
-    //     const formData = new FormData();
+    handleSubmit(e) {
+        e.preventDefault();
+        let story = { story: this.state }
+        const formData = new FormData();
 
-    //     formData.append('story[description]', this.state.description)
-    //     formData.append('story[lat]', this.state.lat)
-    //     formData.append('story[long]', this.state.long)
-    //     formData.append('story[seats]', this.state.seats)
-    //     if (this.state.photoFile) {
-    //         formData.append('story[photo]', this.state.photoFile)
-    //     }
+        formData.append('story[title]', this.state.title)
+        formData.append('story[body]', this.state.body)
+        formData.append('story[user_id]', this.state.user_id)
 
-    //     this.props.createstory(formData).then(
-    //         this.props.history.push('/')
-    //     )
 
-    // }
+        // if (this.state.photoFile) {
+        //     formData.append('story[photo]', this.state.photoFile)
+        // }
+
+        this.props.createStory(formData).then(
+            this.props.history.push('/')
+        )
+
+    }
 
     // handleFile(e) {
 
