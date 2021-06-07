@@ -1,5 +1,5 @@
 import React from 'react';
-import { Route, Redirect } from 'react-router-dom'
+import ContentEditable from 'react-contenteditable'
 
 
 class StoryForm extends React.Component {
@@ -81,9 +81,7 @@ class StoryForm extends React.Component {
                 {/* <label >Body: </label>
                 <textarea className="form-story-body" type='text' onChange={this.update("body")}></textarea> */}
 
-                <div contentEditable="true">Type here. You can insert images too
-                    <img src="http://t2.gstatic.com/images?q=tbn:ANd9GcQCze-mfukcuvzKk7Ilj2zQ0CS6PbOkq7ZhRInnNd1Yz3TQzU4e&t=1" />
-                </div>
+                <ContentEditable html={this.state.body} onChange={this.update("body")} />
 
                 <button>Submit</button>
 

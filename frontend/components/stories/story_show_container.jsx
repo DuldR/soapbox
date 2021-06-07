@@ -3,7 +3,7 @@ import StoryShow from './story_show'
 import { fetchOneStory } from '../../actions/story_actions'
 
 const mapStateToProps = (state, ownProps) => ({
-    story: state.entities.stories
+    story: state.entities.stories[ownProps.match.params.storyId]
 })
 
 const mapDispatchToProps = (dispatch) => ({

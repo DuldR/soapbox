@@ -9,7 +9,7 @@ const storyReducer = (state = {}, action) => {
         case RECEIVE_STORIES:
             return action.stories
         case RECEIVE_ONE_STORY:
-            return action.story
+            return Object.assign({}, state, {[action.story.id]: action.story})
         default:
             return state;
     }
