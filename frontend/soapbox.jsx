@@ -15,6 +15,7 @@ import * as capi from '../frontend/util/comment_util'
 
 import * as sessions from '../frontend/actions/session_actions'
 import * as stories from '../frontend/actions/story_actions'
+import * as comments from '../frontend/actions/comment_actions'
 
 document.addEventListener("DOMContentLoaded", () => {
     const root = document.getElementById("root")
@@ -43,4 +44,5 @@ window.sapi = sapi
 window.capi = capi
 window.session = sessions
 window.stories = stories
+window.comments = comments
 
