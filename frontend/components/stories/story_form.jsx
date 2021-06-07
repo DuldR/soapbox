@@ -81,7 +81,7 @@ class StoryForm extends React.Component {
                 {/* <label >Body: </label>
                 <textarea className="form-story-body" type='text' onChange={this.update("body")}></textarea> */}
 
-                <ContentEditable html={this.state.body} onChange={this.update("body")} />
+                <ContentEditable className={"form-story-body"} html={this.state.body} onChange={this.update("body")} />
 
                 <button>Submit</button>
 

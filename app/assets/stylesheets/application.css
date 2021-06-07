@@ -13,3 +13,10 @@
  *= require_tree .
  *= require_self
  */
+
+
+ .form-story-body {
+     background-color: lightblue;
+     width: 500px;
+     height: 500px;
+ }
