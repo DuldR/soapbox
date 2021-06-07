@@ -10,6 +10,7 @@ import LoginFormContainer from './forms/login_form_container'
 import StoryIndexContainer from './stories/story_index_container'
 import StoryShowContainer from './stories/story_show_container'
 import UserDropdown from './home/placeholder_user_dropdown'
+import StoryFormContainer from './stories/story_form_container'
 
 
 
@@ -25,6 +26,7 @@ const App = () => (
             <AuthRoute exact path={'/login'} exact={true} component={LoginFormContainer} />
             <Route path="/stories/:storyId" component={StoryShowContainer} />
             <Route exact path={'/'} component={StoryIndexContainer} />
+            <Route exact path={'/new'} component={StoryFormContainer} />
 
         </Switch>
 

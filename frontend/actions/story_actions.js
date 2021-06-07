@@ -30,3 +30,9 @@ export const fetchOneStory = (story) => (dispatch) => {
         dispatch(receiveOneStory(story))
     })
 }
+
+export const createStory = (story) => (dispatch) => {
+    return APIUtil.createStory(story).then(story => {
+        dispatch(receiveOneStory(story))
+    })
+}
