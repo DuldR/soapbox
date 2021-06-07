@@ -25,6 +25,7 @@ const App = () => (
             <AuthRoute exact path={'/signup'} exact={true} component={SignupFormContainer} />
             <AuthRoute exact path={'/login'} exact={true} component={LoginFormContainer} />
             <Route path="/stories/:storyId" component={StoryShowContainer} />
+            {/* Probably needs to be protected route */}
             <Route exact path={'/'} component={StoryIndexContainer} />
             <Route exact path={'/new'} component={StoryFormContainer} />
 

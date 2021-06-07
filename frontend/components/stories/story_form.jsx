@@ -78,8 +78,12 @@ class StoryForm extends React.Component {
                 <label >Title: </label>
                 <input className="form-story-title" type='text' onChange={this.update("title")}></input>
                 <br></br>
-                <label >Body: </label>
-                <input className="form-story-body" type='text' onChange={this.update("body")}></input>
+                {/* <label >Body: </label>
+                <textarea className="form-story-body" type='text' onChange={this.update("body")}></textarea> */}
+
+                <div contentEditable="true">Type here. You can insert images too
+                    <img src="http://t2.gstatic.com/images?q=tbn:ANd9GcQCze-mfukcuvzKk7Ilj2zQ0CS6PbOkq7ZhRInnNd1Yz3TQzU4e&t=1" />
+                </div>
 
                 <button>Submit</button>
 
