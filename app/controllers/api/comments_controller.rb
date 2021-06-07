@@ -2,22 +2,22 @@ class Api::CommentsController < ApplicationController
 
     def create
 
-        @story = Story.new(story_params)
+        @commnet= Comment.new(comment_params)
 
-        if @story.save
-            render json: @story
+        if @comment.save
+            render json: @comment
         else
             render json: ["Not a correct"], status: 422
         end
 
     end
 
-    # def show
-    #     @story = Story.find(params[:id])
+    def show
+        @comment = Comment.find(params[:id])
 
-    #     render json: @story
+        render json: @comment
 
-    # end
+    end
 
     # def update
 
@@ -55,8 +55,8 @@ class Api::CommentsController < ApplicationController
 
     private
 
-    def story_params
-        params.require(:story).permit(:id, :body, :user_id, :title)
+    def comment_params
+        params.require(:comment).permit(:body, :user_id, :story_id)
 
     end
 

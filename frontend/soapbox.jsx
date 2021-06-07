@@ -9,6 +9,7 @@ import configureStore from './store/store'
 // import * as sapi from '../frontend/util/session_util'
 import * as uapi from '../frontend/util/user_util'
 import * as sapi from '../frontend/util/story_util'
+import * as capi from '../frontend/util/comment_util'
 
 // Actions
 
@@ -39,6 +40,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
 window.uapi = uapi
 window.sapi = sapi
+window.capi = capi
 window.session = sessions
 window.stories = stories
 
