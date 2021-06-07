@@ -28,34 +28,34 @@ class Api::CommentsController < ApplicationController
 
     end
 
-    # def update
+    def update
 
-    #     @story = Story.find(story_params[:id])
+        @comment = Comment.find(comment_params[:id])
 
-    #     if @story.update(story_params)
-    #         render json: @story
-    #     else
-    #         render json: @story.errors.full_messages, status: 422
+        if @comment.update(comment_params)
+            render json: @comment
+        else
+            render json: @comment.errors.full_messages, status: 422
 
-    #     end
+        end
 
-    # end
+    end
 
-    # def destroy
+    def destroy
 
-    #     # Kill dependents
-    #     @story = Story.find(params[:id])
+        # Kill dependents
+        @comment = Comment.find(params[:id])
 
-    #     @story.destroy
+        @comment.destroy
 
-    #     render json: {}
+        render json: {}
 
-    # end
+    end
 
     private
 
     def comment_params
-        params.require(:comment).permit(:body, :user_id, :story_id)
+        params.require(:comment).permit(:body, :user_id, :story_id, :id)
 
     end
 

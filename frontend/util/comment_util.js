@@ -23,3 +23,21 @@ export const createComment = (comment) => {
     })
 
 }
+
+
+export const destroyComment = (commentId) => {
+
+    return $.ajax({
+        method: "DELETE",
+        url: `api/comments/${commentId}`
+    })
+
+}
+
+export const updateComment = (comment) => {
+    return $.ajax({
+        method: "PATCH",
+        url: `api/comments/${comment.id}`,
+        data: comment
+    })
+}
