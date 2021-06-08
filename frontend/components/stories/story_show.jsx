@@ -1,4 +1,5 @@
 import React from 'react'
+import CommentIndexContainer from '../comments/comment_index_container'
 
 
 class StoryShow extends React.Component {
@@ -24,6 +25,7 @@ class StoryShow extends React.Component {
                 <li>
                     {story.title}
                 </li>
+                <CommentIndexContainer />
             </ul>
         )
     }
