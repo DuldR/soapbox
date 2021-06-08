@@ -13,8 +13,7 @@ class Api::StoriesController < ApplicationController
     end
 
     def show
-        @story = Story.find(params[:id])
-
+        @story = Story.includes(:comments).find_by(id: params[:id])
         render json: @story
 
     end

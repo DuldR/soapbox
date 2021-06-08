@@ -1,18 +1,21 @@
-export const getComment = (commentId) => {
 
-    return $.ajax({
-        method: "GET",
-        url: `api/comments/${commentId}`,
-    })
+// This sort of works, but we want to get all comments for a specific story.
+// export const getComment = (commentId) => {
 
-}
+//     return $.ajax({
+//         method: "GET",
+//         url: `api/comments/${commentId}`,
+//     })
 
-export const getAllComments = () => {
-    return $.ajax({
-        method: "GET",
-        url: 'api/comments/'
-    })
-}
+// }
+
+// This is an index. We dont want.
+// export const getAllComments = () => {
+//     return $.ajax({
+//         method: "GET",
+//         url: 'api/comments/'
+//     })
+// }
 
 export const createComment = (comment) => {
 

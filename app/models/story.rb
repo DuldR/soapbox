@@ -10,4 +10,6 @@
 #
 class Story < ApplicationRecord
     # PRobably need some code here for ocmments
+
+    has_many :comments
 end
