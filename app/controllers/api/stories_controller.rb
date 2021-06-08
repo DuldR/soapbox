@@ -13,8 +13,9 @@ class Api::StoriesController < ApplicationController
     end
 
     def show
+        # Ok, working now. Need to jbuild it out.
         @story = Story.includes(:comments).find_by(id: params[:id])
-        render json: @story
+        render :show
 
     end
 
@@ -47,7 +48,7 @@ class Api::StoriesController < ApplicationController
         # Might need to limit this
         @stories = Story.all
     
-        render json: @stories
+        render :index
 
     end
 
