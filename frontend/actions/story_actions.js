@@ -1,7 +1,11 @@
 import * as APIUtil from '../util/story_util'
 
+import { receiveComments } from './comment_actions'
+
 export const RECEIVE_STORIES = "RECEIVE_STORIES"
 export const RECEIVE_ONE_STORY = "RECEIVE_ONE_STORY"
+
+export const RECEIVE_COMMENTS = "RECEIVE_COMMENTS"
 
 
 
@@ -28,6 +32,8 @@ export const fetchStories = () => (dispatch) => {
 export const fetchOneStory = (story) => (dispatch) => {
     return APIUtil.getStory(story).then(story => {
         dispatch(receiveOneStory(story))
+        dispatch(receiveComments(story.comments))
+
     })
 }
 

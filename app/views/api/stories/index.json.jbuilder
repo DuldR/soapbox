@@ -4,7 +4,7 @@
 
 @stories.each do |story|
     json.set! story.id do
-        json.extract! story, :title, :body
+        json.extract! story, :title, :body, :id
     end
 
 end

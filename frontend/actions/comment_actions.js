@@ -18,8 +18,8 @@ export const receiveOneComment = (comment) => {
     }
 }
 
-export const fetchComments = () => (dispatch) => {
-    return APIUtil.getAllComments().then(comments => {
-        dispatch(receiveComments(comments))
-    })
-}
+// export const fetchComments = () => (dispatch) => {
+//     return APIUtil.getAllComments().then(comments => {
+//         dispatch(receiveComments(comments))
+//     })
+// }
