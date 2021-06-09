@@ -1,9 +1,10 @@
 import { connect } from 'react-redux'
+import { selectOneUser } from '../../reducers/selectors'
 import CommentForm from './comment_form'
 
 
 const mapStateToProps = (state, ownProps) => ({
-    story: ownProps
+    user: selectOneUser(state)
 
 })
 
