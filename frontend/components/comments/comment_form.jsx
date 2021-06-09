@@ -18,13 +18,11 @@ class CommentForm extends React.Component {
         let comment = { comment: this.state }
         const formData = new FormData();
 
-        formData.append('story[story_id]', this.state.story_id)
-        formData.append('story[body]', this.state.body)
-        formData.append('story[user_id]', this.state.user_id)
+        formData.append('comment[story_id]', this.state.story_id)
+        formData.append('comment[body]', this.state.body)
+        formData.append('comment[user_id]', this.state.user_id)
 
-        this.props.createStory(formData).then(
-            this.props.history.push('/')
-        )
+        this.props.createComment(formData)
 
     }
 

@@ -30,7 +30,7 @@ class CommentIndex extends React.Component {
     }
 
     render () { 
-        console.log(this.props.comments)
+
         return (
             <ul>
                 {this.listComments()}
