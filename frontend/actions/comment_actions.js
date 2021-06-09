@@ -23,3 +23,9 @@ export const receiveOneComment = (comment) => {
 //         dispatch(receiveComments(comments))
 //     })
 // }
+
+export const createComment = (comment) => (dispatch) => {
+    return APIUtil.createComment(comment).then(comment => {
+        dispatch(receiveOneComment(comment))
+    })
+}
