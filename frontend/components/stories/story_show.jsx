@@ -1,6 +1,9 @@
 import React from 'react'
 import CommentIndexContainer from '../comments/comment_index_container'
+import CommentFormContainer from '../comments/comment_form_container'
+import CommentForm from '../comments/comment_form'
 
+import { Route } from 'react-router-dom'
 
 class StoryShow extends React.Component {
 
@@ -21,12 +24,18 @@ class StoryShow extends React.Component {
 
 
         return (
-            <ul>
-                <li>
+
+            <section>
+                <ul>
                     {story.title}
-                </li>
-                <CommentIndexContainer />
-            </ul>
+                </ul>
+                
+                <CommentIndexContainer />     
+                {/* <CommentFormContainer /> */}
+
+                <Route path='/stories/:storyId/' component={CommentFormContainer} />
+
+            </section>
         )
     }
 }
