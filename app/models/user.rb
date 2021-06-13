@@ -20,6 +20,10 @@ class User < ApplicationRecord
     validates :email, uniqueness: true
     validates :password_digest, presence: { message: "Password can't be blank" }
     validates :password, length: { minimum: 6, allow_nil: true }
+
+    has_many :follows, foreign_key: "follower_id", dependent: :destroy
+    has_many :followed_users, through: :follows, source: :followed
+
    
 
     before_validation(on: :create) do
