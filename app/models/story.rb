@@ -12,4 +12,7 @@ class Story < ApplicationRecord
     # PRobably need some code here for ocmments
 
     has_many :comments
+
+    has_many :story_follows, foreign_key: "story_id", dependent: :destroy
+    has_many :followed_users, through: :story_follows, source: :user
 end
