@@ -22,7 +22,9 @@ class CommentForm extends React.Component {
         formData.append('comment[body]', this.state.body)
         formData.append('comment[user_id]', this.state.user_id)
 
-        this.props.createComment(formData)
+        this.props.createComment(formData).then(
+            document.getElementById('comment-form').value = ""
+        )
 
     }
 
@@ -35,7 +37,7 @@ class CommentForm extends React.Component {
              <form onSubmit={this.handleSubmit} className="form-comment" id="comment-submit">
 
                 <label >Comment Body: </label>
-                <textarea className="form-comment-body" type='text' onChange={this.update("body")}></textarea>
+                <textarea className="form-comment-body" id="comment-form" type='text' onChange={this.update("body")}></textarea>
                 <br></br>
 
                 <button>Submit</button>
