@@ -21,11 +21,7 @@ class User < ApplicationRecord
     validates :password_digest, presence: { message: "Password can't be blank" }
     validates :password, length: { minimum: 6, allow_nil: true }
 
-    has_many :follows, foreign_key: "follower_id", dependent: :destroy
-    has_many :followed_users, through: :follows, source: :followed
-
-    has_many :story_follows, foreign_key: "story_id", dependent: :destroy
-    has_many :followed_stories, through: :story_follows, source: :story
+    has_many :follows, foreign_key: "followable_id", dependent: :destroy
 
    
 
