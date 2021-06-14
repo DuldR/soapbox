@@ -24,6 +24,9 @@ class User < ApplicationRecord
     has_many :follows, foreign_key: "follower_id", dependent: :destroy
     has_many :followed_users, through: :follows, source: :followed
 
+    has_many :story_follows, foreign_key: "story_id", dependent: :destroy
+    has_many :followed_stories, through: :story_follows, source: :story
+
    
 
     before_validation(on: :create) do
