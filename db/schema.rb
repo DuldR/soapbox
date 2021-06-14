@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_06_13_010527) do
+ActiveRecord::Schema.define(version: 2021_06_14_021807) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -25,16 +25,6 @@ ActiveRecord::Schema.define(version: 2021_06_13_010527) do
     t.index ["user_id"], name: "index_comments_on_user_id"
   end
 
-  create_table "follows", force: :cascade do |t|
-    t.integer "follower_id", null: false
-    t.integer "followed_id", null: false
-    t.datetime "created_at", precision: 6, null: false
-    t.datetime "updated_at", precision: 6, null: false
-    t.index ["followed_id"], name: "index_follows_on_followed_id"
-    t.index ["follower_id", "followed_id"], name: "index_follows_on_follower_id_and_followed_id", unique: true
-    t.index ["follower_id"], name: "index_follows_on_follower_id"
-  end
-
   create_table "stories", force: :cascade do |t|
     t.string "body", null: false
     t.integer "user_id", null: false
@@ -42,16 +32,6 @@ ActiveRecord::Schema.define(version: 2021_06_13_010527) do
     t.datetime "updated_at", precision: 6, null: false
     t.string "title", null: false
     t.index ["user_id"], name: "index_stories_on_user_id"
-  end
-
-  create_table "story_follows", force: :cascade do |t|
-    t.integer "story_id", null: false
-    t.integer "user_id", null: false
-    t.datetime "created_at", precision: 6, null: false
-    t.datetime "updated_at", precision: 6, null: false
-    t.index ["story_id", "user_id"], name: "index_story_follows_on_story_id_and_user_id", unique: true
-    t.index ["story_id"], name: "index_story_follows_on_story_id"
-    t.index ["user_id"], name: "index_story_follows_on_user_id"
   end
 
   create_table "users", force: :cascade do |t|
