@@ -22,6 +22,7 @@ class User < ApplicationRecord
     validates :password, length: { minimum: 6, allow_nil: true }
 
     has_many :follows, foreign_key: "followable_id", dependent: :destroy
+    has_many :followed_users, through: :follows, source: :follower
 
    
 
