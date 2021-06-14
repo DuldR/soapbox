@@ -1,6 +1,6 @@
 class Follow < ApplicationRecord
-    belongs_to :followable
-    belongs_to :follower, class_name: "User"
+    belongs_to :followable, polymorphic: true
+    belongs_to :follower, polymorphic: true
 
 
     # belongs_to :story
