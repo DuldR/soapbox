@@ -25,3 +25,11 @@ Comment.create!(user_id: 1, story_id: 1, body: "I liked it!")
 Comment.create!(user_id: 2, story_id: 1, body: "It was meh")
 Comment.create!(user_id: 3, story_id: 2, body: "Go off king")
 Comment.create!(user_id: 4, story_id: 2, body: "Now THIS is pod racing")
+
+# Follows
+
+Follow.create!(followable_id: 1, followable_type: "Story", follower_id: 1, follower_type: "User")
+Follow.create!(followable_id: 2, followable_type: "Story", follower_id: 1, follower_type: "User")
+Follow.create!(followable_id: 3, followable_type: "Story", follower_id: 1, follower_type: "User")
+Follow.create!(followable_id: 1, followable_type: "Story", follower_id: 2, follower_type: "User")
+

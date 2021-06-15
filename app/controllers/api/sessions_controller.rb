@@ -1,13 +1,13 @@
 class Api::SessionsController < ApplicationController
 
     def create
-        @user = User.find_by_credentials(sessions_params[:username], sessions_params[:password])
+        @user = User.includes(:followed_users).find_by_credentials(sessions_params[:username], sessions_params[:password])
         
         if @user.nil?
             render json: ['Wrong credz'], status: 401
         else
             login!(@user)
-            render json: @user
+            render :create, :user => @user
         end
     end
 

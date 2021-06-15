@@ -22,22 +22,10 @@ class User < ApplicationRecord
     validates :password, length: { minimum: 6, allow_nil: true }
 
     has_many :follows, as: :follower
-    has_many :user_follows, -> { where(followable_type: "User")}, class_name: "Follow", foreign_key: "follower_id"
-    has_many :story_follows, -> { where(followable_type: "Story")}, class_name: "Follow", foreign_key: "follower_id"
-
-    # YES THIS IS IT!!!!!!!!!!!!!!!!
-    # has_many :followed_users, through: :user_follows, source: :followable, source_type: "User"
 
     has_many :followed_users, through: :follows, source: :followable, source_type: "User"
     has_many :followed_stories, through: :follows, source: :followable, source_type: "Story"
 
-    # has_many :follows, foreign_key: "followable_id", dependent: :destroy
-
-    # has_many :user_follows, -> { where(followable_type: "User")}, class_name: "Follow", foreign_key: "followable_id"
-    # has_many :followed_users, through: :user_follows, source: :follower, class_name: "User"
-    # has_many :followed_users, through: :follows, source: :followeer
-
-   
 
     before_validation(on: :create) do
         :ensure_session_token

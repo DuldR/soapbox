@@ -1,10 +1,8 @@
 class Follow < ApplicationRecord
+
+    
     belongs_to :followable, polymorphic: true
     belongs_to :follower, polymorphic: true
-
-
-    # belongs_to :story
-    # belongs_to :user
 
 
     # Then in the controller call the necessary method using switch case
