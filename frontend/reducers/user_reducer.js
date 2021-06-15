@@ -7,8 +7,7 @@ const userReducer = (state = {}, action) => {
 
     switch (action.type) {
         case RECEIVE_CURRENT_USER:
-            newState = Object.assign({}, state, { [action.payload.userInfo.id] : action.payload.userInfo })
-            return newState
+            return { [action.payload.userInfo.id] : action.payload.userInfo }
         default:
             return state;
     }
