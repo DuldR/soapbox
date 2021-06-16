@@ -17,3 +17,11 @@ json.storyFollows do
         end
     end
 end
+
+json.userFollows do
+    @user.followed_users.each do |user|
+        json.set! user.id do
+            json.extract! user, :username, :id
+        end
+    end
+end

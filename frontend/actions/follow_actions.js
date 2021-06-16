@@ -16,3 +16,7 @@ export const receiveOneFollow = (follow) => {
         follow
     }
 }
+
+export const fetchFollows = (user) => (dispatch) => {
+
+}

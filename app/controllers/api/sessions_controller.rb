@@ -1,7 +1,7 @@
 class Api::SessionsController < ApplicationController
 
     def create
-        @user = User.includes(:followed_users).find_by_credentials(sessions_params[:username], sessions_params[:password])
+        @user = User.find_by_credentials(sessions_params[:username], sessions_params[:password])
         
         if @user.nil?
             render json: ['Wrong credz'], status: 401
