@@ -9,10 +9,20 @@ class StoryShow extends React.Component {
 
     constructor(props) {
         super(props)
+
+        this.followButton = this.followButton.bind(this)
     }
 
     componentDidMount() {
         this.props.fetchOneStory(this.props.match.params.storyId)
+    }
+
+    followButton () {
+        if (this.props.follow === true) {
+            return <h1>You follow this!</h1>
+        } else {
+            return <h1> You dont follow this!</h1>
+        }
     }
 
     render () {
@@ -35,6 +45,7 @@ class StoryShow extends React.Component {
 
                 <Route path='/stories/:storyId/' component={CommentFormContainer} />
 
+                {this.followButton()}
             </section>
         )
     }
