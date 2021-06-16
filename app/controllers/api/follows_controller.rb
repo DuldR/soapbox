@@ -3,18 +3,10 @@ class Api::FollowsController < ApplicationController
     end
 
     def index
-        puts params[:id]
 
-        @user = User.includes(:followed_stories).find_by(id: params[:user_id])
+        @user = User.includes(:followed_stories).includes(:followed_users).find_by(id: params[:user_id])
 
         render :index
-        # render :index
-
-        # Return a relation
-        # @user = User.where(:id => params[:user_id])
-
-        # render json: @user.followed_stories
-        # render json: @user.followed_stories
 
     end
 
