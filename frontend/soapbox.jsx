@@ -10,6 +10,7 @@ import configureStore from './store/store'
 import * as uapi from '../frontend/util/user_util'
 import * as sapi from '../frontend/util/story_util'
 import * as capi from '../frontend/util/comment_util'
+import * as fapi from '../frontend/util/follow_util'
 
 // Actions
 
@@ -42,6 +43,8 @@ document.addEventListener("DOMContentLoaded", () => {
 window.uapi = uapi
 window.sapi = sapi
 window.capi = capi
+window.fapi = fapi
+
 window.session = sessions
 window.stories = stories
 window.comments = comments

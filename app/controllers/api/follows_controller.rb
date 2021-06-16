@@ -1,5 +1,12 @@
 class Api::FollowsController < ApplicationController
     def create
+        @follow = Follow.new(follow_params)
+
+        if @follow.save
+            render json: @follow
+        else
+            render json: ["Not a good follow"], status: 422
+        end
     end
 
     def index
