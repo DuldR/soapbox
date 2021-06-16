@@ -11,6 +11,7 @@ class StoryIndex extends React.Component {
 
     componentDidMount() {
         this.props.fetchStories();
+        this.props.fetchFollows(this.props.user.id)
     }
 
     listStories() {
