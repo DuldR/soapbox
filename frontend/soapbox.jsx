@@ -17,6 +17,9 @@ import * as fapi from '../frontend/util/follow_util'
 import * as sessions from '../frontend/actions/session_actions'
 import * as stories from '../frontend/actions/story_actions'
 import * as comments from '../frontend/actions/comment_actions'
+import * as follows from '../frontend/actions/follow_actions'
+
+
 
 document.addEventListener("DOMContentLoaded", () => {
     const root = document.getElementById("root")
@@ -48,4 +51,5 @@ window.fapi = fapi
 window.session = sessions
 window.stories = stories
 window.comments = comments
+window.follows = follows
 

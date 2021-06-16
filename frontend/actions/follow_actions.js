@@ -1,4 +1,6 @@
 // Will need API Util to MAKE a follow
+
+import * as APIUtil from "../util/follow_util"
 export const RECEIVE_FOLLOWS = "RECEIVE_FOLLOWS"
 export const RECEIVE_ONE_FOLLOW = "RECEIVE_ONE_FOLLOW"
 
@@ -17,6 +19,8 @@ export const receiveOneFollow = (follow) => {
     }
 }
 
-export const fetchFollows = (user) => (dispatch) => {
-
+export const fetchFollows = (userId) => (dispatch) => {
+    return APIUtil.getAllFollows(userId).then(follows => {
+        dispatch(receiveFollows(follows))
+    })
 }
