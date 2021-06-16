@@ -1,5 +1,5 @@
 import { connect } from 'react-redux'
-import { selectAllStories } from '../../reducers/selectors'
+import { selectAllStories, selectOneUser } from '../../reducers/selectors'
 
 
 import { fetchStories } from '../../actions/story_actions'
@@ -12,7 +12,7 @@ import StoryIndex from './story_index'
 const mapStateToProps = (state) => ({
 
     stories: selectAllStories(state),
-    user: state.entities.user
+    user: selectOneUser(state)
 
 })
 
