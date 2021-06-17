@@ -25,6 +25,12 @@ export const fetchFollows = (userId) => (dispatch) => {
     })
 }
 
+export const fetchOneFollow = (follow) => (dispatch) => {
+    return APIUtil.getFollow(follow).then(follows => {
+        dispatch(receiveOneFollow(follows))
+    })
+}
+
 export const createFollow = (follow) => (dispatch) => {
     return APIUtil.createFollow(follow).then(follow => {
         dispatch(receiveOneFollow(follow))

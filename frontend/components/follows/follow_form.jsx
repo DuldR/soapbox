@@ -1,4 +1,5 @@
 import React from 'react'
+import { getFollow } from '../../util/follow_util'
 
 
 class FollowForm extends React.Component {
@@ -6,7 +7,7 @@ class FollowForm extends React.Component {
     constructor(props) {
         super(props)
 
-        this.state = { followed: this.props.followed }
+        this.state = { followed: this.props.followed, follow_id: null }
 
         this.follow = { follow: { followable_id: parseInt(this.props.match.params.storyId), followable_type: this.props.followType, follower_id: this.props.user.id, follower_type: "User"} }
 
@@ -17,7 +18,9 @@ class FollowForm extends React.Component {
     }
 
     componentDidMount () {
-        
+        getFollow(this.follow).then(follow => this.setState({
+            follow_id: follow[0].id
+        }))
     }
 
     handleSubmit(e) {

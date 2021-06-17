@@ -2,7 +2,7 @@ import { RECEIVE_FOLLOWS, RECEIVE_ONE_FOLLOW } from '../actions/follow_actions'
 
 
 
-const followReducer = (state = {"userFollows": {}, "storyFollows": {}}, action) => {
+const followReducer = (state = {"userFollows": {}, "storyFollows": {}, "lookupFollow": []}, action) => {
     Object.freeze(state);
 
 
