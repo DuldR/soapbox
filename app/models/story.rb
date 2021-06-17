@@ -15,4 +15,5 @@ class Story < ApplicationRecord
     
 
     has_many :follows, as: :followable
+
 end

@@ -7,6 +7,16 @@ export const getAllFollows = (userId) => {
 
 }
 
+export const getFollow = (follow) => {
+
+    return $.ajax({
+        method: "GET",
+        url: "api/follow",
+        data: follow,
+    })
+
+}
+
 // Can use a form data here
 export const createFollow = (follow) => {
 
@@ -18,12 +28,12 @@ export const createFollow = (follow) => {
 
 }
 
-export const destroyComment = (followId, v) => {
+export const destroyComment = (followId, lookup) => {
 
     return $.ajax({
         method: "DELETE",
         url: `api/follows/${followId}`,
-        data: v
+        data: lookup
     })
 
 }

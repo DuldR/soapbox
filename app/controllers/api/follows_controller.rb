@@ -17,6 +17,14 @@ class Api::FollowsController < ApplicationController
 
     end
 
+    def show
+
+        @follow = Follow.where(followable_id: follow_params[:followable_id], followable_type: follow_params[:followable_type], follower_id: follow_params[:follower_id])
+
+        render json: @follow
+
+    end
+
     def destroy
 
         @follow = Follow.followable_story(params[:id])

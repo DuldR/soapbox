@@ -6,12 +6,18 @@ class FollowForm extends React.Component {
     constructor(props) {
         super(props)
 
+        this.state = { followed: this.props.followed }
+
         this.follow = { follow: { followable_id: parseInt(this.props.match.params.storyId), followable_type: this.props.followType, follower_id: this.props.user.id, follower_type: "User"} }
 
         // this.state = { followable_id: parseInt(props.match.params.storyId), followable_type: this.props.followType, follower_id: this.props.user.id, follower_type: "User"}
 
         this.handleSubmit = this.handleSubmit.bind(this)
         this.handleDelete = this.handleDelete.bind(this)
+    }
+
+    componentDidMount () {
+        
     }
 
     handleSubmit(e) {
