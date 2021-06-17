@@ -1,7 +1,7 @@
 import React from 'react'
 import CommentIndexContainer from '../comments/comment_index_container'
 import CommentFormContainer from '../comments/comment_form_container'
-import CommentForm from '../comments/comment_form'
+import FollowFormContainer from '../follows/follow_form_container'
 
 import { Route } from 'react-router-dom'
 
@@ -10,6 +10,8 @@ class StoryShow extends React.Component {
     constructor(props) {
         super(props)
 
+     
+
         this.followButton = this.followButton.bind(this)
     }
 
@@ -17,12 +19,10 @@ class StoryShow extends React.Component {
         this.props.fetchOneStory(this.props.match.params.storyId)
     }
 
+
     followButton () {
-        if (this.props.follow === true) {
-            return <h1>You follow this!</h1>
-        } else {
-            return <h1> You dont follow this!</h1>
-        }
+
+
     }
 
     render () {
@@ -44,8 +44,10 @@ class StoryShow extends React.Component {
                 {/* <CommentFormContainer /> */}
 
                 <Route path='/stories/:storyId/' component={CommentFormContainer} />
-
-                {this.followButton()}
+                <Route path='/stories/:storyId/' render={(props) => (
+                        <FollowFormContainer {...props} followType={"Story"}/>
+                    )} 
+                />
             </section>
         )
     }

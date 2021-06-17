@@ -22,11 +22,10 @@ const App = () => (
         </header>
 
         <Switch>
+            
             <AuthRoute exact path={'/signup'} exact={true} component={SignupFormContainer} />
             <AuthRoute exact path={'/login'} exact={true} component={LoginFormContainer} />
-            {/* <Route path="/stories/:storyId" component={StoryShowContainer} /> */}
-            {/* Probably needs to be protected route */}
-            {/* <Route exact path={'/'} component={StoryIndexContainer} /> */}
+
 
             <ProtectedRoute exact path={`/stories/:storyId`} component={StoryShowContainer} />
             <ProtectedRoute exact path={'/'} component={StoryIndexContainer} />
