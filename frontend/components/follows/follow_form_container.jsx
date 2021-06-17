@@ -4,7 +4,8 @@ import { createFollow } from '../../actions/follow_actions'
 import FollowForm from './follow_form'
 
 const mapStateToProps = (state, ownProps) => ({
-    user: selectOneUser(state)
+    user: selectOneUser(state),
+    follows: state.entities.follows
 })
 
 const mapDispatchToProps = (dispatch) => ({

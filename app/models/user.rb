@@ -27,6 +27,7 @@ class User < ApplicationRecord
     has_many :followed_stories, through: :follows, source: :followable, source_type: "Story"
 
 
+
     before_validation(on: :create) do
         :ensure_session_token
     end

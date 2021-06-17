@@ -50,7 +50,7 @@ class StoryShow extends React.Component {
                 {this.followButton()}
                 <Route path='/stories/:storyId/' component={CommentFormContainer} />
                 <Route path='/stories/:storyId/' render={(props) => (
-                        <FollowFormContainer {...props} followType={"Story"}/>
+                        <FollowFormContainer {...props} followed={this.props.follow} followType={"Story"}/>
                     )} 
                 />
             </section>

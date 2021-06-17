@@ -11,5 +11,5 @@ class Follow < ApplicationRecord
 
     # scope :follower_user, ->(id) { where(follower_id: id, followable_type: "User") }
 
-    scope :followed_users, ->{ where(followable_type: "User") }
+    scope :followable_story, ->(story_id, user_id) { where(followable_id: story_id, followable_type: "Story", follower_id: user_id) }
 end
