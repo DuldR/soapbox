@@ -22,6 +22,11 @@ class StoryShow extends React.Component {
 
     followButton () {
 
+        if (this.props.follow === true) {
+            return <h1> YOu like this! </h1>
+        } else {
+            return <h1> YOU DONT! LIKT HIS</h1>
+        }
 
     }
 
@@ -42,7 +47,7 @@ class StoryShow extends React.Component {
                 
                 <CommentIndexContainer />     
                 {/* <CommentFormContainer /> */}
-
+                {this.followButton()}
                 <Route path='/stories/:storyId/' component={CommentFormContainer} />
                 <Route path='/stories/:storyId/' render={(props) => (
                         <FollowFormContainer {...props} followType={"Story"}/>
