@@ -36,6 +36,9 @@ class FollowForm extends React.Component {
     handleDelete(e) {
 
         e.preventDefault();
+
+        let follow = { follow: { id: this.state.follow_id}}
+        this.props.deleteFollow(follow)
   
     }
 

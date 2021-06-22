@@ -22,7 +22,7 @@ export const createFollow = (follow) => {
 
     return $.ajax({
         method: "POST",
-        url: "api/follows",
+        url: "api/follow",
         data: follow,
     })
 
@@ -32,7 +32,7 @@ export const destroyFollow = (followId) => {
 
     return $.ajax({
         method: "DELETE",
-        url: `api/follows`,
+        url: `api/follow`,
         data: followId
     })
 
