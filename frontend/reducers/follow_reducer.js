@@ -4,7 +4,7 @@ import { RECEIVE_FOLLOWS, RECEIVE_ONE_FOLLOW, REMOVE_FOLLOW } from '../actions/f
 
 const followReducer = (state = {"userFollows": {}, "storyFollows": {}}, action) => {
     Object.freeze(state);
-
+    let nextState = {}
 
     switch(action.type) {
         case RECEIVE_FOLLOWS:
@@ -19,11 +19,14 @@ const followReducer = (state = {"userFollows": {}, "storyFollows": {}}, action) 
             }
 
             if (action.follow[0].followable_type === "Story") {
-                return Object.assign({}, state, {"storyFollows": action.follow[0]})
+                return Object.assign({}, state, {"storyFollows": {[action.follow[0].id] : action.follow[0]}})
             } else {
-                return Object.assign({}, state, {"userFollows": action.follow[0]})
+                return Object.assign({}, state, {"userFollows": {[action.follow[0].id] : action.follow[0]}})
             }
         case REMOVE_FOLLOW:
+            nextState = Object.assign({}, state)
+            delete nextState[action.follow.id]
+            return nextState
 
         default:
             return state;
