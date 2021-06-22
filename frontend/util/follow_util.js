@@ -28,12 +28,12 @@ export const createFollow = (follow) => {
 
 }
 
-export const destroyComment = (followId, lookup) => {
+export const destroyFollow = (followId) => {
 
     return $.ajax({
         method: "DELETE",
-        url: `api/follows/${followId}`,
-        data: lookup
+        url: `api/follow/`,
+        data: followId
     })
 
 }

@@ -27,7 +27,7 @@ class Api::FollowsController < ApplicationController
 
     def destroy
 
-        @follow = Follow.followable_story(params[:id])
+        @follow = Follow.find_by(id: params[:id])
         
         render json: @follow
     end
