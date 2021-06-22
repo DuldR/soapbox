@@ -21,7 +21,11 @@ class Api::FollowsController < ApplicationController
 
         @follow = Follow.where(followable_id: follow_params[:followable_id], followable_type: follow_params[:followable_type], follower_id: follow_params[:follower_id])
 
-        render json: @follow
+        if @follow.empty?
+            render json: {}
+        else
+            render :show
+        end
 
     end
 
