@@ -1,4 +1,4 @@
-import { RECEIVE_FOLLOWS, RECEIVE_ONE_FOLLOW } from '../actions/follow_actions'
+import { RECEIVE_FOLLOWS, RECEIVE_ONE_FOLLOW, REMOVE_FOLLOW } from '../actions/follow_actions'
 
 
 
@@ -23,6 +23,8 @@ const followReducer = (state = {"userFollows": {}, "storyFollows": {}}, action) 
             } else {
                 return Object.assign({}, state, {"userFollows": action.follow[0]})
             }
+        case REMOVE_FOLLOW:
+
         default:
             return state;
     }

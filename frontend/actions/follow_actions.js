@@ -47,5 +47,7 @@ export const createFollow = (follow) => (dispatch) => {
 }
 
 export const deleteFollow = (follow) => (dispatch) => {
-    
+    return APIUtil.destroyFollow(follow).then((follow) => {
+        dispatch(removeFollow(follow))
+    })
 }
