@@ -1,6 +1,7 @@
 import { connect } from 'react-redux'
 import StoryShow from './story_show'
 import { fetchOneStory } from '../../actions/story_actions'
+import { fetchOneFollow } from '../../actions/follow_actions'
 
 const mapStateToProps = (state, ownProps) => ({
     story: state.entities.stories[ownProps.match.params.storyId],
@@ -9,7 +10,8 @@ const mapStateToProps = (state, ownProps) => ({
 })
 
 const mapDispatchToProps = (dispatch) => ({
-    fetchOneStory: (story) => dispatch(fetchOneStory(story))
+    fetchOneStory: (story) => dispatch(fetchOneStory(story)),
+    fetchOneFollow: (follow) => dispatch(fetchOneFollow(follow))
 })
 
 export default connect(mapStateToProps, mapDispatchToProps)(StoryShow)

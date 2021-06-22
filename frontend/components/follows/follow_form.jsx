@@ -30,8 +30,9 @@ class FollowForm extends React.Component {
         this.props.createFollow(this.follow)
     }
 
-    handleDelete() {
+    handleDelete(e) {
 
+        e.preventDefault();
         
         if (this.props.followType === "Story") {
             if (this.props.follows.storyFollows.followable_id) {

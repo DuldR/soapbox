@@ -16,7 +16,10 @@ class StoryShow extends React.Component {
     }
 
     componentDidMount() {
+        let lookUpFollow = {follow: {followable_id: this.props.match.params.storyId, followable_type: "Story", follower_id: this.props.user_id} }
+
         this.props.fetchOneStory(this.props.match.params.storyId)
+        this.props.fetchOneFollow(lookUpFollow)
     }
 
 
@@ -50,7 +53,7 @@ class StoryShow extends React.Component {
                 {this.followButton()}
                 <Route path='/stories/:storyId/' component={CommentFormContainer} />
                 <Route path='/stories/:storyId/' render={(props) => (
-                        <FollowFormContainer {...props} followed={this.props.follow} followType={"Story"}/>
+                        <FollowFormContainer {...props} story={this.props.story} followed={this.props.follow} followType={"Story"}/>
                     )} 
                 />
             </section>
