@@ -10,22 +10,27 @@ class StoryShow extends React.Component {
     constructor(props) {
         super(props)
 
-     
+        this.state = { follow: this.props.follow}
 
         this.followButton = this.followButton.bind(this)
     }
 
     componentDidMount() {
-        let lookUpFollow = {follow: {followable_id: this.props.match.params.storyId, followable_type: "Story", follower_id: this.props.user_id} }
+        let lookUpFollow = {follow: {followable_id: this.props.match.params.storyId, followable_type: "Story", follower_id: this.props.user_id}, lookup: true }
 
         this.props.fetchOneStory(this.props.match.params.storyId)
-        this.props.fetchOneFollow(lookUpFollow)
+        this.props.fetchOneFollow(lookUpFollow).then(follow => {
+            if (follow.length != 0) {
+                this.setState({ follow: !this.props.follow })
+            }
+
+        })
     }
 
 
     followButton () {
 
-        if (this.props.follow === true) {
+        if (this.state.follow === true) {
             return <h1> YOu like this! </h1>
         } else {
             return <h1> YOU DONT! LIKT HIS</h1>

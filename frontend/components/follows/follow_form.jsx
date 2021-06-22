@@ -18,9 +18,11 @@ class FollowForm extends React.Component {
     }
 
     componentDidMount () {
-        getFollow(this.follow).then(follow => this.setState({
-            follow_id: follow[0].id
-        }))
+        if (this.props.followed === true) {
+            getFollow(this.follow).then(follow => this.setState({
+                follow_id: follow[0].id
+            }))
+        }
     }
 
     handleSubmit(e) {
