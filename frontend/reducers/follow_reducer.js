@@ -17,10 +17,10 @@ const followReducer = (state = {"userFollows": {}, "storyFollows": {}}, action) 
                 
             
 
-            if (action.follow.payload.followable_type === "Story") {
-                return Object.assign({}, state, {"storyFollows": {[action.follow.payload.id] : action.follow.payload}})
+            if (action.follow.followable_type === "Story") {
+                return Object.assign({}, state, {"storyFollows": {[action.follow.id] : action.follow}})
             } else {
-                return Object.assign({}, state, {"userFollows": {[action.follow.payload.id] : action.follow.payload}})
+                return Object.assign({}, state, {"userFollows": {[action.follow.id] : action.follow}})
             }
         case REMOVE_FOLLOW:
             nextState = Object.assign({}, state)
