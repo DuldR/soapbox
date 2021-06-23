@@ -19,7 +19,7 @@ class FollowForm extends React.Component {
 
     componentDidMount () {
         // if (this.props.followed === true) {
-            getFollow(this.follow).then(follow => {
+            this.props.fetchOneFollow(this.follow).then(follow => {
                 if (Object.keys(follow).length !== 0 ) {
                     this.setState({ followed: true,
                     follow_id: follow.payload.id})

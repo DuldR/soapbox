@@ -34,9 +34,9 @@ export const fetchFollows = (userId) => (dispatch) => {
 }
 
 export const fetchOneFollow = (follow) => (dispatch) => {
-    return APIUtil.getFollow(follow).then(follows => {
-        dispatch(receiveOneFollow(follows))
-        return follows
+    return APIUtil.getFollow(follow).then(follow => {
+        dispatch(receiveOneFollow(follow))
+        return follow
     })
 }
 
