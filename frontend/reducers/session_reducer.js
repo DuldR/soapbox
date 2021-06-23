@@ -8,7 +8,7 @@ const sessionReducer = (state = {id: null}, action) => {
 
     switch (action.type) {
         case RECEIVE_CURRENT_USER:
-            newState = Object.assign({}, state, {id: action.payload.userInfo.id})
+            newState = Object.assign({}, state, {id: action.payload.id})
             return newState
         case LOGOUT_CURRENT_USER:
             newState = Object.assign({}, state, {id: null})

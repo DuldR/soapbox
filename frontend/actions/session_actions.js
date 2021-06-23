@@ -28,7 +28,7 @@ export const login = (user) => (dispatch) => {
     return APIUtil.createSession(user).then(user => {
 
         dispatch(receiveCurrentUser(user))
-        dispatch(fetchFollows(user.userInfo.id))
+        // dispatch(fetchFollows(user.userInfo.id))
     })
 }
 

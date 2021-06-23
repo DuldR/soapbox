@@ -19,12 +19,6 @@ class StoryShow extends React.Component {
         let lookUpFollow = {follow: {followable_id: this.props.match.params.storyId, followable_type: "Story", follower_id: this.props.user_id}, lookup: true }
 
         this.props.fetchOneStory(this.props.match.params.storyId)
-        this.props.fetchOneFollow(lookUpFollow).then(follow => {
-            if (follow.length != 0) {
-                this.setState({ follow: !this.props.follow })
-            }
-
-        })
     }
 
 
@@ -55,7 +49,6 @@ class StoryShow extends React.Component {
                 
                 <CommentIndexContainer />     
                 {/* <CommentFormContainer /> */}
-                {this.followButton()}
                 <Route path='/stories/:storyId/' component={CommentFormContainer} />
                 <Route path='/stories/:storyId/' render={(props) => (
                         <FollowFormContainer {...props} story={this.props.story} followed={this.props.follow} followType={"Story"}/>
