@@ -2,5 +2,15 @@
 
 .story-body {
     background-color: aqua;
-    margin: 20px 0 0 0
+    margin: 20px 0 0 0;
+    display: flex;
+}
+
+.story-index {
+    background-color: lightsalmon;
+    width: 60%
+}
+
+.story-dashboard {
+    background-color: lightseagreen;
 }

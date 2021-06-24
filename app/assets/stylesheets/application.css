@@ -68,19 +68,27 @@ table {
 }
 
 .app-body {
-    background-color: lightgreen;
+    background-color: white;
     margin: 0px 10px 10px;
 }
 
 .nav-bar {
+    background-color: burlywood;
     width: 100%;
     display: flex;
     flex-direction: row;
     justify-content: space-between;
+    border-bottom: black 1px solid;
 }
 
 .nav-login {
 
+}
+
+.nav-user {
+    width: 250px;
+    display: flex;
+    justify-content: space-evenly;
 }
 
 .nav-logo {

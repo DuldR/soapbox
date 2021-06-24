@@ -48,7 +48,6 @@ class Greeting extends React.Component{
             <div className={"nav-login"}>
                 <h2>Welcome, {currentUser.username}</h2>
                 <button className={"logout-button"} onClick={this.logout}>Log out?</button>
-                <Link to="/">Back To Index</Link>
             </div>
         )
     }
