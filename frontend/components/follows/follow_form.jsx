@@ -1,5 +1,4 @@
 import React from 'react'
-import { getFollow } from '../../util/follow_util'
 
 
 class FollowForm extends React.Component {
@@ -15,7 +14,7 @@ class FollowForm extends React.Component {
 
         this.handleSubmit = this.handleSubmit.bind(this)
         this.handleDelete = this.handleDelete.bind(this)
-        this.likeState = this.likeState.bind(this);
+        this.renderButton = this.renderButton.bind(this)
     }
 
     componentDidMount () {
@@ -36,7 +35,6 @@ class FollowForm extends React.Component {
         e.preventDefault();
 
         this.props.createFollow(this.follow).then(follow => {
-            console.log(follow)
             this.setState({followed: true, follow_id: follow.id})
         })
     }
@@ -51,30 +49,24 @@ class FollowForm extends React.Component {
         })
     }
 
-    likeState() {
 
+    renderButton() {
 
-        if (this.state.followed === false ) {
-            return <h1>Not Liked</h1>
+        if (this.state.followed === false) {
+            return <form onSubmit={this.handleSubmit}>
+                <button>Follow</button>
+            </form>
         } else {
-            return <h1>Liked!</h1>
+            return <form onSubmit={this.handleDelete}>
+                <button>Un-follow</button>
+            </form>
         }
     }
 
     render () {
         return (
             <section>
-                {this.likeState()}
-                <form onSubmit={this.handleSubmit}>
-                     <button>Like?</button>
-                </form>
-
-                <form onSubmit={this.handleDelete}>
-                     <button>Baleete?</button>
-                </form>
-
-               
-
+                {this.renderButton()}
             </section>
         )
     }
