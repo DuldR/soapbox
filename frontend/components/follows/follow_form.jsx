@@ -15,6 +15,7 @@ class FollowForm extends React.Component {
 
         this.handleSubmit = this.handleSubmit.bind(this)
         this.handleDelete = this.handleDelete.bind(this)
+        this.likeState = this.likeState.bind(this);
     }
 
     componentDidMount () {
@@ -34,7 +35,10 @@ class FollowForm extends React.Component {
 
         e.preventDefault();
 
-        this.props.createFollow(this.follow)
+        this.props.createFollow(this.follow).then(follow => {
+            console.log(follow)
+            this.setState({followed: true, follow_id: follow.id})
+        })
     }
 
     handleDelete(e) {
@@ -42,13 +46,25 @@ class FollowForm extends React.Component {
         e.preventDefault();
 
         let follow = { follow: { id: this.state.follow_id}}
-        this.props.deleteFollow(follow)
-  
+        this.props.deleteFollow(follow).then(follow => {
+            this.setState({followed: false, follow_id: null})
+        })
+    }
+
+    likeState() {
+
+
+        if (this.state.followed === false ) {
+            return <h1>Not Liked</h1>
+        } else {
+            return <h1>Liked!</h1>
+        }
     }
 
     render () {
         return (
             <section>
+                {this.likeState()}
                 <form onSubmit={this.handleSubmit}>
                      <button>Like?</button>
                 </form>

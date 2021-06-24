@@ -43,6 +43,7 @@ export const fetchOneFollow = (follow) => (dispatch) => {
 export const createFollow = (follow) => (dispatch) => {
     return APIUtil.createFollow(follow).then(follow => {
         dispatch(receiveOneFollow(follow))
+        return follow
     })
 }
 
