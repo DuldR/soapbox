@@ -8,7 +8,24 @@ class Dashboard extends React.Component {
 
     render () {
         return (
-            <h1> Test </h1>
+            <section className={"dashboard-body"}>
+                <div className={"dashboard-box"}>
+                    Topics
+                </div>
+
+                <div className={"dashboard-box"}>
+                    Users
+
+                </div>
+                    
+                <div className={"dashboard-box"}>
+                    Bookmarks
+                </div>
+
+                <div className={"dashboard-box"}>
+                    Footer Info
+                </div>
+            </section>
         )
     }
 }

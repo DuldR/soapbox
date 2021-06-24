@@ -30,6 +30,7 @@ const App = () => (
 
         <div className={"story-body"}>
             <ProtectedRoute exact path={'/index'} component={StoryIndexContainer} />
+            <ProtectedRoute exact path={'/index'} component={DashboardContainer} />
 
             <Switch>
                 
