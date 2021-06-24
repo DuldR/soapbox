@@ -25,7 +25,7 @@ class StoryForm extends React.Component {
         // }
 
         this.props.createStory(formData).then(
-            this.props.history.push('/')
+            this.props.history.push('/index')
         )
 
     }

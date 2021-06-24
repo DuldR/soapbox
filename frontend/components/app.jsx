@@ -11,6 +11,7 @@ import StoryIndexContainer from './stories/story_index_container'
 import StoryShowContainer from './stories/story_show_container'
 import UserDropdown from './home/placeholder_user_dropdown'
 import StoryFormContainer from './stories/story_form_container'
+import DashboardContainer from './dashboard/dashboard_container'
 
 import Logo from './home/logo'
 
@@ -28,6 +29,8 @@ const App = () => (
         </header>
 
         <div className={"story-body"}>
+            <ProtectedRoute exact path={'/index'} component={StoryIndexContainer} />
+
             <Switch>
                 
                 <AuthRoute exact path={'/signup'} exact={true} component={SignupFormContainer} />
@@ -35,7 +38,6 @@ const App = () => (
 
 
                 <ProtectedRoute exact path={`/stories/:storyId`} component={StoryShowContainer} />
-                <ProtectedRoute exact path={'/'} component={StoryIndexContainer} />
                 <ProtectedRoute exact path={'/new'} component={StoryFormContainer} />
 
             </Switch>
