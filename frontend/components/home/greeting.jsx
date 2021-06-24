@@ -45,7 +45,7 @@ class Greeting extends React.Component{
     greeting() {
         const {currentUser} = this.props
         return (
-            <div className={"nav-bar"}>
+            <div className={"nav-login"}>
                 <h2>Welcome, {currentUser.username}</h2>
                 <button className={"logout-button"} onClick={this.logout}>Log out?</button>
                 <Link to="/">Back To Index</Link>

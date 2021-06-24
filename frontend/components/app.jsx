@@ -12,26 +12,35 @@ import StoryShowContainer from './stories/story_show_container'
 import UserDropdown from './home/placeholder_user_dropdown'
 import StoryFormContainer from './stories/story_form_container'
 
+import Logo from './home/logo'
+
 
 
 const App = () => (
-    <div>
-        <header>
-            <GreetingContainer />
-            <UserDropdown />
+    <div className={"app-body"}>
+        <header className={"nav-bar"}>
+            <Logo />
+            <div className={"nav-user"}>
+                <UserDropdown />
+                <GreetingContainer />
+            </div>
+
         </header>
 
-        <Switch>
-            
-            <AuthRoute exact path={'/signup'} exact={true} component={SignupFormContainer} />
-            <AuthRoute exact path={'/login'} exact={true} component={LoginFormContainer} />
+        <div className={"story-body"}>
+            <Switch>
+                
+                <AuthRoute exact path={'/signup'} exact={true} component={SignupFormContainer} />
+                <AuthRoute exact path={'/login'} exact={true} component={LoginFormContainer} />
 
 
-            <ProtectedRoute exact path={`/stories/:storyId`} component={StoryShowContainer} />
-            <ProtectedRoute exact path={'/'} component={StoryIndexContainer} />
-            <ProtectedRoute exact path={'/new'} component={StoryFormContainer} />
+                <ProtectedRoute exact path={`/stories/:storyId`} component={StoryShowContainer} />
+                <ProtectedRoute exact path={'/'} component={StoryIndexContainer} />
+                <ProtectedRoute exact path={'/new'} component={StoryFormContainer} />
 
-        </Switch>
+            </Switch>
+
+        </div>
 
     </div>
 )
