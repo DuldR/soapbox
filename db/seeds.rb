@@ -33,3 +33,10 @@ Follow.create!(followable_id: 2, followable_type: "Story", follower_id: 1, follo
 Follow.create!(followable_id: 3, followable_type: "Story", follower_id: 1, follower_type: "User")
 Follow.create!(followable_id: 1, followable_type: "Story", follower_id: 2, follower_type: "User")
 
+Topic.create(topic_name: "Science")
+Topic.create(topic_name: "Math")
+Topic.create(topic_name: "Art")
+
+StoryTopic.create(topic_id: 1, story_id: 1)
+StoryTopic.create(topic_id: 2, story_id: 1)
+StoryTopic.create(topic_id: 3, story_id: 1)

@@ -15,5 +15,8 @@ class Story < ApplicationRecord
     
 
     has_many :follows, as: :followable
+    has_many :story_topics
+    has_many :topics, through: :story_topics
+
 
 end
