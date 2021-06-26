@@ -9,15 +9,21 @@ class UserDropdown extends React.Component {
 
     render () {
         return (
-            <ul>
+            <ul className={"nav-user-search"}>
                 <li>
-                    <Link to='/new'>Write a story</Link>
+                    <a href="#" >
+                        <i className={"fas fa-search"}></i>
+                    </a>
                 </li>
                 <li>
-                    Stories
+                    <a href="#">
+                        <i className={"far fa-bookmark"}></i>
+                    </a>
                 </li>
                 <li>
-                    Stats
+                    <a href="#">
+                        <i className={"far fa-bell"}></i>
+                    </a>
                 </li>
             </ul>
         )

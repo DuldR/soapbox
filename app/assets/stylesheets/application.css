@@ -83,12 +83,29 @@ table {
 
 .nav-login {
 
+    width: 100px;
+    text-align: right;
+    margin: 0 10px 0 0;
 }
 
 .nav-user {
-    width: 250px;
+    width: 500px;
     display: flex;
-    justify-content: space-evenly;
+    justify-content: flex-end;
+}
+
+.nav-user-search {
+    display: flex;
+    width: 300px;
+    margin: 0 15px 0 0;
+    justify-content: flex-end;
+    align-items: center;
+
+}
+
+.nav-user-search li {
+    width: 50px;
+
 }
 
 .nav-logo {
