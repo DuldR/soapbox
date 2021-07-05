@@ -17,7 +17,7 @@ class Api::TopicsController < ApplicationController
 
         @topic = Topic.find(params[:id])
         @topic.destroy
-        render json: {}
+        render json: @topic
 
     end
 
