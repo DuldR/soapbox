@@ -19,6 +19,7 @@ import * as sessions from '../frontend/actions/session_actions'
 import * as stories from '../frontend/actions/story_actions'
 import * as comments from '../frontend/actions/comment_actions'
 import * as follows from '../frontend/actions/follow_actions'
+import * as topics from '../frontend/actions/topic_actions'
 
 
 
@@ -54,4 +55,4 @@ window.session = sessions
 window.stories = stories
 window.comments = comments
 window.follows = follows
-
+window.topics = topics
