@@ -12,6 +12,7 @@ Rails.application.routes.draw do
     end
     resources :stories, only: [:create, :index, :show, :destroy, :update]
     resources :comments, only: [:create, :index, :show, :destroy, :update]
+    resources :topics, only: [:create, :index, :destroy]
 
 
     resource :session, only: [:create, :destroy]

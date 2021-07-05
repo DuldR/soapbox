@@ -11,6 +11,7 @@ import * as uapi from '../frontend/util/user_util'
 import * as sapi from '../frontend/util/story_util'
 import * as capi from '../frontend/util/comment_util'
 import * as fapi from '../frontend/util/follow_util'
+import * as tapi from '../frontend/util/topic_util'
 
 // Actions
 
@@ -47,6 +48,7 @@ window.uapi = uapi
 window.sapi = sapi
 window.capi = capi
 window.fapi = fapi
+window.tapi = tapi
 
 window.session = sessions
 window.stories = stories
