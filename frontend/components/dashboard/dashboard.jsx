@@ -1,4 +1,5 @@
 import React from 'react'
+import TopicIndexContainer from '../topics/topic_index_container';
 
 
 class Dashboard extends React.Component {
@@ -10,7 +11,7 @@ class Dashboard extends React.Component {
         return (
             <section className={"dashboard-body"}>
                 <div className={"dashboard-box"}>
-                    Topics
+                    <TopicIndexContainer />
                 </div>
 
                 <div className={"dashboard-box"}>
