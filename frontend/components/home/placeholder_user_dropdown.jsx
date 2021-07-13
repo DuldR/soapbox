@@ -25,6 +25,12 @@ class UserDropdown extends React.Component {
                         <i className={"far fa-bell"}></i>
                     </a>
                 </li>
+
+                <li>
+                    <Link to="/new">
+                        <i className={"fas fa-pen"}></i>
+                    </Link>
+                </li>
             </ul>
         )
     }

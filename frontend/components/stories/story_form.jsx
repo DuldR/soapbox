@@ -30,38 +30,6 @@ class StoryForm extends React.Component {
 
     }
 
-    // handleFile(e) {
-
-    //     const file = e.currentTarget.files[0]
-    //     const fileReader = new FileReader();
-
-    //     fileReader.onloadend = () => {
-    //         this.setState({photoFile: file, photoUrl: fileReader.result})
-    //     }
-
-    //     if (file) {
-    //         fileReader.readAsDataURL(file);
-    //     }
-        
-
-    //     this.setState({photoFile: e.currentTarget.files[0] })
-    // }
-
-    // My methodoloy, they provided a better way though
-    // addstory(e) {
-
-    //     switch(e.currentTarget.classList[0]) {
-    //         case ("form-description"):
-    //             this.setState( {description: e.currentTarget.value} )
-    //             break
-    //         case ('form-seats'):
-    //             this.setState( {seats: e.currentTarget.value} )
-    //             break
-    //         default:
-    //             break
-    //     }
-
-    // }
 
     update(property) {
 

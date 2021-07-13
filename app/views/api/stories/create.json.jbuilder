@@ -1,0 +1,1 @@
+json.payload @story, :title, :body, :id

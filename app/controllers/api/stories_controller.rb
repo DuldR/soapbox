@@ -5,7 +5,7 @@ class Api::StoriesController < ApplicationController
         @story = Story.new(story_params)
 
         if @story.save
-            render json: @story
+            render :create
         else
             render json: ["Not a correct"], status: 422
         end
