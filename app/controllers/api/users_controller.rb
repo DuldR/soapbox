@@ -13,6 +13,13 @@ class Api::UsersController < ApplicationController
 
     end
 
+    def index
+
+        @users = User.order(Arel.sql('RANDOM()')).limit(3)
+        render :index
+
+    end
+
     private 
 
     def user_params

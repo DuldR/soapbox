@@ -1,5 +1,6 @@
 import React from 'react'
 import TopicIndexContainer from '../topics/topic_index_container';
+import UserIndexContainer from '../users/user_index_container'
 
 
 class Dashboard extends React.Component {
@@ -15,7 +16,7 @@ class Dashboard extends React.Component {
                 </div>
 
                 <div className={"dashboard-box"}>
-                    Users
+                    <UserIndexContainer />
 
                 </div>
                     
