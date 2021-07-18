@@ -1,5 +1,6 @@
 import { combineReducers } from 'redux'
 import userReducer from './user_reducer'
+import userIndexReducer from './userIndex_reducer'
 import storyReducer from './story_reducer'
 import commentReducer from './comment_reducer'
 import followReducer from './follow_reducer'
@@ -10,7 +11,8 @@ const entitiesReducer = combineReducers({
     stories: storyReducer,
     comments: commentReducer,
     follows: followReducer,
-    topics: topicReducer
+    topics: topicReducer,
+    userIndex: userIndexReducer
     
 })
 

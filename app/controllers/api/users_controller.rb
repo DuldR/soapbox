@@ -16,7 +16,7 @@ class Api::UsersController < ApplicationController
     def index
 
         @users = User.order(Arel.sql('RANDOM()')).limit(3)
-        render :index
+        render json: @users
 
     end
 
