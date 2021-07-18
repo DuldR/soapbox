@@ -1,6 +1,6 @@
 import { RECEIVE_USERS, RECEIVE_ONE_USER } from '../actions/user_actions'
 
-const userIndexReducer = (state = {}, action) => {
+const userIndexReducer = (state = [], action) => {
     Object.freeze(state);
     let newState = {}
 
