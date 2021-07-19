@@ -1,6 +1,8 @@
 import React from 'react'
 import TopicIndexContainer from '../topics/topic_index_container';
 import UserIndexContainer from '../users/user_index_container'
+import FollowIndexContainer from '../follows/follow_index_container'
+import { Footer } from '../footer/footer'
 
 
 class Dashboard extends React.Component {
@@ -21,11 +23,11 @@ class Dashboard extends React.Component {
                 </div>
                     
                 <div className={"dashboard-box"}>
-                    Bookmarks
+                    <FollowIndexContainer />
                 </div>
 
                 <div className={"dashboard-box"}>
-                    Footer Info
+                    <Footer />
                 </div>
             </section>
         )

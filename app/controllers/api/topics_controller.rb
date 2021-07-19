@@ -23,7 +23,7 @@ class Api::TopicsController < ApplicationController
 
     def index
 
-        @topics = Topic.all
+        @topics = Topic.order(Arel.sql('RANDOM()')).limit(5)
         render json: @topics
 
     end
