@@ -12,6 +12,7 @@ class Story < ApplicationRecord
     # PRobably need some code here for ocmments
 
     has_many :comments
+    belongs_to :user
     
 
     has_many :follows, as: :followable

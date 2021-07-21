@@ -10,12 +10,9 @@ export const StoryIndexItem = (props) => {
             <li>
                 <Link to={`/stories/${story.id}`}>
                     {story.title}
+                    {story.body}
                 </Link>
     
-            </li>
-
-            <li>
-                {story.body}
             </li>
         </ul>
     )

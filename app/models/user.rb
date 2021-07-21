@@ -23,6 +23,8 @@ class User < ApplicationRecord
 
     has_many :follows, as: :follower
 
+    has_many :stories
+
     has_many :followed_users, through: :follows, source: :followable, source_type: "User"
     has_many :followed_stories, through: :follows, source: :followable, source_type: "Story"
 

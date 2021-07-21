@@ -69,7 +69,11 @@ table {
 
 .app-body {
     background-color: white;
-    margin: 0px 10px 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin: 0 auto;
+    width: 60%;
 }
 
 .nav-bar {
