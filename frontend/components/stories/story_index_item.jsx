@@ -9,7 +9,7 @@ export const StoryIndexItem = (props) => {
         <ul>
             <li className={"story-index-item"}>
 
-                <header>{}</header>
+                <header>{story.user}</header>
 
                 
                 <Link to={`/stories/${story.id}`}>
