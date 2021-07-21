@@ -7,11 +7,23 @@ export const StoryIndexItem = (props) => {
 
     return (
         <ul>
-            <li>
+            <li className={"story-index-item"}>
+
+                <header>{}</header>
+
+                
                 <Link to={`/stories/${story.id}`}>
-                    {story.title}
-                    {story.body}
+
+                    <h1>{story.title}</h1>
+
+                    <article>
+                        {story.body}
+                    </article>
+                        
+
                 </Link>
+                
+        
     
             </li>
         </ul>
