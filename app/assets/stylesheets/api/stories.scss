@@ -21,6 +21,35 @@
 
 .story-index-item {
     height: 50px;
-    margin: 5px 0 5px 0;
+    margin: 20px 0 20px 0;
 
 }
+
+.story-index-item a {
+    text-decoration: none;
+    color: black;
+}
+
+.story-index-item a:visited, a:hover, a:focus, a:active {
+    color: black
+}
+
+.story-index-item h1 {
+    font-size: 30px;
+    font-weight: bold;
+}
+
+.story-index-item article {
+    font-size: 20px;
+    font-weight: 100;
+    color: grey
+}
+
+
+
+
+
+    // a:visited { text-decoration: none; color:red; },
+    // a:hover { text-decoration: none; color:blue; },
+    // a:focus { text-decoration: none; color:yellow; },
+    // a:hover, a:active { text-decoration: none; color:black },
