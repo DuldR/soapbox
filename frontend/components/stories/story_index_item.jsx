@@ -6,7 +6,7 @@ export const StoryIndexItem = (props) => {
     const { story } = props
 
     return (
-        <ul>
+        <ul className={"story-index-container"}>
             <li className={"story-index-item"}>
 
                 <header>{story.user}</header>
@@ -22,6 +22,10 @@ export const StoryIndexItem = (props) => {
                         
 
                 </Link>
+
+                <footer>
+                    {story.topic == null ? <h4>no tags</h4> : story.topic.topic_name}
+                </footer>
                 
         
     

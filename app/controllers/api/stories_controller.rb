@@ -46,7 +46,7 @@ class Api::StoriesController < ApplicationController
     def index
 
         # Might need to limit this
-        @stories = Story.includes(:user).all
+        @stories = Story.includes(:user, :topics).all
     
         render :index
 
