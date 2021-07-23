@@ -30,7 +30,7 @@ class UserIndex extends React.Component {
     render () {
 
         return (
-            <ul>
+            <ul className={'dashboard-box-items'}>
                 {this.listUsers()}
             </ul>
         )

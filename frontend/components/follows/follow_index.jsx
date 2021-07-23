@@ -30,7 +30,7 @@ class FollowIndex extends React.Component {
 
     render () {
         return (
-            <ul>
+            <ul className={'dashboard-box-items'}>
                 {this.listFollows()}
             </ul>
         )

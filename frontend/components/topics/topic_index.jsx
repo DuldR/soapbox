@@ -30,7 +30,7 @@ class TopicIndex extends React.Component {
     render() {
 
         return ( 
-            <ul className={'dashboard-box-topic'}>
+            <ul className={'dashboard-box-items'}>
                 {this.listTopics()}
             </ul>
         )

@@ -9,9 +9,13 @@
 
 .dashboard-box {
     background-color: lightyellow;
-    height: 100px;
+    height: 200px;
+    width: 350px;
     border-bottom: solid black 1px;
-    position: relative;
+    display: flex;
+    flex-flow: row wrap;
+    align-items: center;
+    justify-content: center;
 
 }
 
@@ -23,13 +27,18 @@
 
 .dashboard-footer {
     display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-    justify-content: space-evenly;
+    flex-flow: row wrap;
 }
 
-.dashboard-box-topic {
+.dashboard-footer li {
+
+    margin: 10px;
+}
+.dashboard-box-items {
     display: flex;
     flex-flow: row wrap;
-    justify-content: space-around;
+    justify-content: space-evenly;
+    height: 150px;
+    width: 200px;
+    margin: 10px;
 }
