@@ -19,6 +19,7 @@ class Dashboard extends React.Component {
 
                 <div className={"dashboard-box"}>
                     <UserIndexContainer />
+
                 </div>
                     
                 <div className={"dashboard-box"}>

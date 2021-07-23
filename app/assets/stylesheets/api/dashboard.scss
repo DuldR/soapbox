@@ -10,13 +10,17 @@
 .dashboard-box {
     background-color: lightyellow;
     height: 200px;
-    width: 350px;
+    width: 325px;
+    // padding: 0 20px 0 0px;
     border-bottom: solid black 1px;
     display: flex;
-    flex-flow: row wrap;
-    align-items: center;
-    justify-content: center;
+    flex-flow: column wrap;
+    align-items:center;
+    justify-content: flex-start;
+}
 
+.dashboard-box header {
+    margin: 10px 0 30px 0;
 }
 
 .dashboard-box:first-child {
@@ -32,13 +36,20 @@
 
 .dashboard-footer li {
 
-    margin: 10px;
+    background-color: blue;
 }
-.dashboard-box-items {
+
+.dashboard-box-topics {
     display: flex;
     flex-flow: row wrap;
-    justify-content: space-evenly;
-    height: 150px;
     width: 200px;
-    margin: 10px;
+    justify-content: space-between;
 }
+
+
+.dashboard-box-items li {
+    margin: 10px 10px 0 0;
+    vertical-align: middle;
+    height: 30px;
+}
+
