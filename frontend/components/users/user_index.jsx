@@ -30,9 +30,15 @@ class UserIndex extends React.Component {
     render () {
 
         return (
-            <ul className={'dashboard-box-items'}>
-                {this.listUsers()}
-            </ul>
+
+            <article>
+                <header>Who To Follow</header>
+                <ul className={'dashboard-box-items'}>
+                    {this.listUsers()}
+                </ul>
+
+            </article>
+            
         )
     }
 }
