@@ -30,9 +30,36 @@
 
 }
 
+.story-index-item header {
+    font-size: 13px;
+    font-weight: 500;
+}
+
+.story-index-item footer {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: flex-start;
+    padding: 8px 0 0 0;
+}
+
+.story-index-item footer span {
+    margin: 0 6px 0 6px;
+}
+
+
 .story-index-item a {
     text-decoration: none;
     color: black;
+}
+
+.story-index-item a h1{
+    font-size: 22px;
+    font-weight: 700;
+}
+
+.story-index-item a article {
+    font-size: 16px;
+    font-weight: 400;
 }
 
 .story-index-item a:visited, a:hover, a:focus, a:active {
