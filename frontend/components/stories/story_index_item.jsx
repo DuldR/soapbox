@@ -24,6 +24,7 @@ export const StoryIndexItem = (props) => {
                 </Link>
 
                 <footer>
+                    <div>Time Wrote</div>
                     {story.topic == null ? <h4>no tags</h4> : story.topic.topic_name}
                     <span> How Long To Reade </span>
                     <span>Liked?</span>

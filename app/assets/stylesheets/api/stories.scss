@@ -40,10 +40,15 @@
     flex-flow: row wrap;
     justify-content: flex-start;
     padding: 8px 0 0 0;
+    font-size: 13px;
 }
 
 .story-index-item footer span {
-    margin: 0 6px 0 6px;
+    margin: 0 0 0 6px;
+}
+
+.story-index-item footer div {
+    margin: 0 6px 0 0;
 }
 
 
