@@ -3,9 +3,9 @@ Clone of Medium
 
 
 
-## Feature Areas
+## Roadmap
 
-The following is a list of our current product areas:
+TODO List
 
 - **backend** Database is functional. Still needs to be fleshed out
 - **frontend** CSS is being developed currently. Working to imitate medium closely.
