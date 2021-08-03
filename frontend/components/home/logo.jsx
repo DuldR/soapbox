@@ -1,13 +1,13 @@
 import React from 'react';
 import { Link } from 'react-router-dom'
+import LogoIcon from './logo_icon';
 import img from '../../images/soap.png'
 
 function Logo() {
-    const logo = "Whats good"
 
     return (
         <div className={"group nav-logo-container"}>
-            <img className={"nav-logo-image"} src={img} />
+            <Link to="/index"> <LogoIcon /> </Link>
             <Link className={"nav-logo"} to="/index">Soapbox</Link>
         </div>
     )
