@@ -9,11 +9,16 @@
     border-bottom: black 1px solid;
 }
 
-.nav-login {
+.nav-login-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
 
+.nav-login {
+    font-size: 10px;
     width: 100px;
     text-align: right;
-    margin: 0 10px 0 0;
 }
 
 .nav-user {
@@ -44,7 +49,7 @@
 }
 .nav-logo {
     font-size: 40px;
-    font-weight: bold;
+    font-weight: 400px;
     text-decoration: none;
     color: black;
 }

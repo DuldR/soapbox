@@ -1,7 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom'
 import LogoIcon from './logo_icon';
-import img from '../../images/soap.png'
 
 function Logo() {
 

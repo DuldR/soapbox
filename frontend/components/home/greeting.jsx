@@ -46,7 +46,7 @@ class Greeting extends React.Component{
         const {currentUser} = this.props
         return (
             <div className={"nav-login"}>
-                <h2>Welcome, {currentUser.username}</h2>
+                <h2>Welcome, AVATAR</h2>
                 <button className={"logout-button"} onClick={this.logout}>Log out?</button>
             </div>
         )
@@ -57,7 +57,7 @@ class Greeting extends React.Component{
 
 
         return (
-            <div>
+            <div className={"nav-login-container"}>
                 {this.loggedIn() ? this.signup() : this.greeting()}
             </div>
         )

@@ -2,7 +2,7 @@ import React from 'react'
 import { Link } from 'react-router-dom'
 import GreetingContainer from './greeting_container'
 
-class UserDropdown extends React.Component {
+class NavBar extends React.Component {
 
     constructor(props) {
         super(props)
@@ -42,4 +42,4 @@ class UserDropdown extends React.Component {
 
 }
 
-export default UserDropdown
+export default NavBar

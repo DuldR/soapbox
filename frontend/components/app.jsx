@@ -4,16 +4,15 @@ import { AuthRoute, ProtectedRoute } from '../util/route_util'
 import { Route, Switch } from 'react-router-dom'
 
 // Components
-import GreetingContainer from './home/greeting_container'
 import SignupFormContainer from './forms/signup_form_container'
 import LoginFormContainer from './forms/login_form_container'
 import StoryIndexContainer from './stories/story_index_container'
 import StoryShowContainer from './stories/story_show_container'
-import UserDropdown from './home/placeholder_user_dropdown'
 import StoryFormContainer from './stories/story_form_container'
 import DashboardContainer from './dashboard/dashboard_container'
 
 import Logo from './home/logo'
+import NavBar from './home/navbar'
 
 
 
@@ -21,10 +20,7 @@ const App = () => (
     <div className={"app-body"}>
         <header className={"nav-bar"}>
             <Logo />
-            <div className={"nav-user"}>
-                <UserDropdown />
-                <GreetingContainer />
-            </div>
+            <NavBar />
 
         </header>
 
