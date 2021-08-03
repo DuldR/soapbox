@@ -30,15 +30,28 @@
 .nav-user-search {
     display: flex;
     width: 300px;
-    margin: 0 15px 0 0;
-    justify-content: flex-end;
+    margin: 0 5px 0 0;
     align-items: center;
+    justify-content: flex-end;
 
 }
 
 .nav-user-search li {
-    width: 50px;
+    width: 10px;
+    margin: 0 10px 0 10px;
+}
 
+.nav-user-search li:last-child {
+    width: 75px;
+    margin: 0 0 0 10px;
+}
+
+
+.nav-user-search li a i {
+    width: 25px;
+    height: 25px;
+    text-decoration: none;
+    color: black;
 }
 
 .nav-logo-container {

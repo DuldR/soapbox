@@ -21,7 +21,6 @@ const App = () => (
         <header className={"nav-bar"}>
             <Logo />
             <NavBar />
-
         </header>
 
         <div className={"story-body"}>

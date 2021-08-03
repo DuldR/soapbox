@@ -46,7 +46,7 @@ class Greeting extends React.Component{
         const {currentUser} = this.props
         return (
             <div className={"nav-login"}>
-                <h2>Welcome, AVATAR</h2>
+                <h2>AVATAR PLACEHOLDER</h2>
                 <button className={"logout-button"} onClick={this.logout}>Log out?</button>
             </div>
         )

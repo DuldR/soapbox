@@ -10,33 +10,35 @@ class NavBar extends React.Component {
 
     render () {
         return (
-            <ul className={"nav-user-search"}>
-                <li>
-                    <a href="#" >
-                        <i className={"fas fa-search"}></i>
-                    </a>
-                </li>
-                <li>
-                    <a href="#">
-                        <i className={"far fa-bookmark"}></i>
-                    </a>
-                </li>
-                <li>
-                    <a href="#">
-                        <i className={"far fa-bell"}></i>
-                    </a>
-                </li>
+            <div className={"nav-user"}>
+                <ul className={"nav-user-search"}>
+                    <li>
+                        <a href="#" >
+                            <i className={"fas fa-search"}></i>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#">
+                            <i className={"far fa-bookmark"}></i>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#">
+                            <i className={"far fa-bell"}></i>
+                        </a>
+                    </li>
 
-                <li>
-                    <Link to="/new">
-                        <i className={"fas fa-pen"}></i>
-                    </Link>
-                </li>
+                    <li>
+                        <Link to="/new">
+                            <i className={"fas fa-pen"}></i>
+                        </Link>
+                    </li>
 
-                <li>
-                    <GreetingContainer />
-                </li>
-            </ul>
+                    <li>
+                        <GreetingContainer />
+                    </li>
+                </ul>
+            </div>
         )
     }
 
