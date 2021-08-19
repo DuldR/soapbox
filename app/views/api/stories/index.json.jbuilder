@@ -6,6 +6,7 @@
         json.user story.user.username
         json.topic story.topics[0]
         json.time story.time_to_read
+        json.created story.create_date
     end
 
 end

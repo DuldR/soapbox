@@ -25,4 +25,18 @@ class Story < ApplicationRecord
         # Give a mulitple for the minutes to read
         self.body.split.size / 125
     end
+
+    def create_date
+        date = self.created_at
+
+        min = Time.now.beginning_of_year
+        max = Time.now.end_of_year
+
+        if date.between?(min, max)
+            return date.strftime("%d %b")
+        else
+            return date.strftime("%d %B %Y")
+        end
+
+    end
 end
