@@ -20,4 +20,9 @@ class Story < ApplicationRecord
     has_many :topics, through: :story_topics
 
 
+    def time_to_read
+        # 125 words per minute
+        # Give a mulitple for the minutes to read
+        self.body.split.size / 125
+    end
 end

@@ -25,8 +25,11 @@ export const StoryIndexItem = (props) => {
 
                 <footer>
                     <div>Time Wrote</div>
-                    {story.topic == null ? <h4>no tags</h4> : story.topic.topic_name}
-                    <span> How Long To Reade </span>
+                    {story.time < 1 ? <span>Less than a min read </span> : <span>{story.time} min read </span>}
+                    {story.topic == null ? <span>no tags</span> : <span>
+                        {story.topic.topic_name}
+                    </span>}
+                    
                     <span>Liked?</span>
                 </footer>
                 
