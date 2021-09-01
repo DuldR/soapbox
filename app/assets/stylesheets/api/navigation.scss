@@ -10,10 +10,11 @@
 }
 
 .nav-login-container {
-    display: flex;
+    display: inline-block;
     align-items: center;
     justify-content: center;
     position: relative;
+    cursor: pointer;
 }
 
 .nav-login-dropdown {
@@ -26,7 +27,7 @@
     z-index: 1;
 }
 
-.nav-login-dropdown-show {
+.show {
     display: block;
 }
 

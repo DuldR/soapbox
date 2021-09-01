@@ -8,7 +8,7 @@ class UserDropdown extends React.Component {
 
     render () {
         return (
-            <h1> HI IM THE DROP DOWN HOLDER</h1>
+            <h1> DD</h1>
         )
     }
 

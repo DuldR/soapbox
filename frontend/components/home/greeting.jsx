@@ -48,11 +48,10 @@ class Greeting extends React.Component{
 
     greeting() {
         const {currentUser} = this.props
-        let className = this.state.clicked ? 'nav-login-dropdown-show' : 'nav-login-dropdown'
+        let className = this.state.clicked ? 'nav-login-dropdown show' : 'nav-login-dropdown'
 
         return (
             <div className={className}>
-                <h2>AVATAR PLACEHOLDER</h2>
                 <button className={"logout-button"} onClick={this.logout}>Log out?</button>
                 <UserDropdown />
             </div>
