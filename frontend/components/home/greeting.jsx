@@ -8,12 +8,15 @@ class Greeting extends React.Component{
     constructor(props) {
         super(props)
 
+        this.state = {clicked: false}
+
 
         this.loggedIn = this.loggedIn.bind(this)
         this.signup = this.signup.bind(this)
         this.greeting = this.greeting.bind(this)
         this.logout = this.logout.bind(this)
         this.refresh = this.refresh.bind(this)
+        this.showDropdown = this.showDropdown.bind(this)
     }
 
 
@@ -45,8 +48,10 @@ class Greeting extends React.Component{
 
     greeting() {
         const {currentUser} = this.props
+        let className = this.state.clicked ? 'nav-login-dropdown-show' : 'nav-login-dropdown'
+
         return (
-            <div className={"nav-login-dropdown"}>
+            <div className={className}>
                 <h2>AVATAR PLACEHOLDER</h2>
                 <button className={"logout-button"} onClick={this.logout}>Log out?</button>
                 <UserDropdown />
@@ -55,7 +60,7 @@ class Greeting extends React.Component{
     }
 
     showDropdown() {
-        console.log("Fired")
+        this.setState({clicked: !this.state.clicked })
     }
 
 
@@ -63,7 +68,7 @@ class Greeting extends React.Component{
 
 
         return (
-            <div onClick={this.showDropdown} onclassName={"nav-login-container"}>
+            <div onClick={this.showDropdown} className={"nav-login-container"}>
                 Placeholder
                 {/* {this.loggedIn() ? this.signup() : this.greeting()} */}
                 {this.greeting()}
