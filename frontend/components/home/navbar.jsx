@@ -35,7 +35,7 @@ class NavBar extends React.Component {
                     </li>
 
                     <li>
-                        <GreetingContainer />
+                        <GreetingContainer/>
                     </li>
                 </ul>
             </div>

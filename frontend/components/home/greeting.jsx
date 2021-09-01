@@ -1,5 +1,6 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
+import UserDropdown from './placeholder_user_dropdown'
 
 
 class Greeting extends React.Component{
@@ -45,11 +46,16 @@ class Greeting extends React.Component{
     greeting() {
         const {currentUser} = this.props
         return (
-            <div className={"nav-login"}>
+            <div className={"nav-login-dropdown"}>
                 <h2>AVATAR PLACEHOLDER</h2>
                 <button className={"logout-button"} onClick={this.logout}>Log out?</button>
+                <UserDropdown />
             </div>
         )
+    }
+
+    showDropdown() {
+        console.log("Fired")
     }
 
 
@@ -57,8 +63,10 @@ class Greeting extends React.Component{
 
 
         return (
-            <div className={"nav-login-container"}>
-                {this.loggedIn() ? this.signup() : this.greeting()}
+            <div onClick={this.showDropdown} onclassName={"nav-login-container"}>
+                Placeholder
+                {/* {this.loggedIn() ? this.signup() : this.greeting()} */}
+                {this.greeting()}
             </div>
         )
 
