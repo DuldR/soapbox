@@ -1,6 +1,6 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
-import UserDropdown from './placeholder_user_dropdown'
+import UserDropdownContainer from './user_dropdown_container'
 
 
 class Greeting extends React.Component{
@@ -14,8 +14,6 @@ class Greeting extends React.Component{
         this.loggedIn = this.loggedIn.bind(this)
         this.signup = this.signup.bind(this)
         this.greeting = this.greeting.bind(this)
-        this.logout = this.logout.bind(this)
-        this.refresh = this.refresh.bind(this)
         this.showDropdown = this.showDropdown.bind(this)
     }
 
@@ -37,23 +35,13 @@ class Greeting extends React.Component{
 
     }
 
-    logout() {
-        this.props.logout();
-    }
-
-    refresh(e) {
-        e.preventDefault()
-        window.location.reload();
-    }
-
     greeting() {
         const {currentUser} = this.props
         let className = this.state.clicked ? 'nav-login-dropdown show' : 'nav-login-dropdown'
 
         return (
             <div className={className}>
-                <button className={"logout-button"} onClick={this.logout}>Log out?</button>
-                <UserDropdown />
+                <UserDropdownContainer />
             </div>
         )
     }
@@ -68,9 +56,8 @@ class Greeting extends React.Component{
 
         return (
             <div onClick={this.showDropdown} className={"nav-login-container"}>
-                Placeholder
-                {/* {this.loggedIn() ? this.signup() : this.greeting()} */}
-                {this.greeting()}
+                Ava
+                {this.loggedIn() ? this.signup() : this.greeting()}
             </div>
         )
 

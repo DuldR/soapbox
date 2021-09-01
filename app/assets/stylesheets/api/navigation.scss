@@ -12,6 +12,7 @@
 .nav-login-container {
     display: inline-block;
     align-items: center;
+    text-align: center;
     justify-content: center;
     position: relative;
     cursor: pointer;
@@ -19,8 +20,9 @@
 
 .nav-login-dropdown {
     font-size: 10px;
-    width: 100px;
+    width: 200px;
     text-align: right;
+    float: left;
     display: none;
     position: absolute;
     background-color: red;
