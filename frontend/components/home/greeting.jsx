@@ -5,8 +5,18 @@ import UserDropdownContainer from './user_dropdown_container'
 
 class Greeting extends React.Component{
 
+    componentDidMount() {
+        document.addEventListener("mousedown", this.handleClickOutside);
+    }
+
+    componentWillUnmount() {
+        document.removeEventListener("mousedown", this.handleClickOutside);
+    }
+
     constructor(props) {
         super(props)
+
+        this.container = React.createRef();
 
         this.state = {clicked: false}
 
@@ -50,12 +60,25 @@ class Greeting extends React.Component{
         this.setState({clicked: !this.state.clicked })
     }
 
+    handleClickOutside = (event) => {
+        if (
+            this.container.current &&
+            !this.container.current.contains(event.target)
+        ) {
+            this.setState({
+            clicked: false,
+            });
+        }
+    };
+
 
     render() {
+        
 
 
         return (
-            <div onClick={this.showDropdown} className={"nav-login-container"}>
+
+            <div onClick={this.showDropdown} ref={this.container} className={"nav-login-container"}>
                 Ava
                 {this.loggedIn() ? this.signup() : this.greeting()}
             </div>
